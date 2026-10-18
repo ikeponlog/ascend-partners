@@ -1,0 +1,16 @@
+/* 診断フロー（site/diagnosis/）の読込。LPと同じトークン・ベース・Brand CTAを共有する
+   PCの値を既定とし、SP（〜767px）は各ファイル内のメディアクエリで上書きする */
+@layer tokens, base, components, sections, utilities;
+
+@import url('tokens.css');
+@import url('base.css');
+
+@import url('components/cta.css');
+@import url('components/dx-card.css');
+
+@import url('sections/dx-header.css');
+@import url('sections/dx-question.css');
+@import url('sections/dx-result.css');
+@import url('sections/dx-form.css');
+
+@import url('utilities.css');

@@ -1,0 +1,26 @@
+@layer utilities {
+  /* PC/SPでコピーや構成が異なる箇所の出し分け（境界 768px） */
+  @media (max-width: 767px) {
+    .u-pc {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .u-sp {
+      display: none;
+    }
+  }
+
+  .u-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

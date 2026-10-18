@@ -1,0 +1,90 @@
+@layer components {
+  /* 番号付きカード（Problems / Benefits / Areas / Steps / Service pillars 共通の骨格）
+     PC：番号60px幅＋本文の横並び、カード高140px・内側の行高88px（Figma実測）。
+     背景・枠・角丸・高さの違いは各セクションで指定し、共通化で差を潰さない。 */
+  .c-numcard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    height: 140px;
+    padding: var(--card-padding) var(--card-padding) calc(var(--card-padding) + 4px);
+  }
+
+  .c-numcard__num {
+    flex: none;
+    width: 60px;
+    color: var(--stc-brand);
+    font-family: var(--font-num);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .c-numcard__body {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    gap: var(--space-12);
+    min-width: 1px;
+  }
+
+  .c-numcard__title {
+    color: var(--stc-ink);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .c-numcard__text {
+    color: var(--stc-muted);
+    font-size: 16px;
+    line-height: var(--lh-body);
+  }
+
+  /* 参照のない中間幅：本文の折返しで内容が増えるため、固定高をやめて欠落・重なりを防ぐ */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .c-numcard {
+      height: auto;
+      min-height: 140px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .c-numcard {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-12);
+      height: auto;
+      padding: var(--card-padding);
+    }
+
+    .c-numcard__num {
+      width: auto;
+      text-align: left;
+    }
+
+    .c-numcard__body {
+      flex: none;
+      width: 100%;
+    }
+
+    /* 番号とタイトルを1行に並べ、本文を下に置く（2026-10-18 Figma更新：Problems / Areas / Why の柱。D-050）
+       行の中は上下中央揃え。番号とタイトルの間隔は --numcard-row-gap（Problems 8 / その他 16） */
+    .c-numcard--inline-sp {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: var(--space-12) var(--numcard-row-gap, var(--space-16));
+    }
+
+    .c-numcard--inline-sp .c-numcard__body {
+      display: contents;
+    }
+
+    .c-numcard--inline-sp .c-numcard__text {
+      grid-column: 1 / -1;
+    }
+  }
+}

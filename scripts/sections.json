@@ -1,0 +1,187 @@
+{
+  "note": "Figma参照画像内のセクション位置（CSS px, 1x）。2026-10-18 Figma更新後（references/figma/v2-20261018。manifest の REF-001v2 / REF-002v2）",
+  "viewports": {
+    "pc": {
+      "width": 1440,
+      "height": 900,
+      "reference": "references/figma/v2-20261018/pc-1440-full-116-2338@1x.png",
+      "sections": [
+        {
+          "id": "header",
+          "selector": ".site-header",
+          "node": "58:4367",
+          "y": 0,
+          "h": 120
+        },
+        {
+          "id": "hero",
+          "selector": ".hero",
+          "node": "58:4373",
+          "y": 120,
+          "h": 658
+        },
+        {
+          "id": "audience",
+          "selector": ".audience",
+          "node": "58:4401",
+          "y": 778,
+          "h": 144
+        },
+        {
+          "id": "problems",
+          "selector": ".problems",
+          "node": "58:4404",
+          "y": 922,
+          "h": 737
+        },
+        {
+          "id": "benefits",
+          "selector": ".benefits",
+          "node": "58:4426",
+          "y": 1659,
+          "h": 496
+        },
+        {
+          "id": "areas",
+          "selector": ".areas",
+          "node": "58:4442",
+          "y": 2155,
+          "h": 673
+        },
+        {
+          "id": "preview",
+          "selector": ".preview",
+          "node": "58:4466",
+          "y": 2828,
+          "h": 862
+        },
+        {
+          "id": "steps",
+          "selector": ".steps",
+          "node": "58:4493",
+          "y": 3690,
+          "h": 450
+        },
+        {
+          "id": "why",
+          "selector": ".why",
+          "node": "58:4512",
+          "y": 4140,
+          "h": 1493
+        },
+        {
+          "id": "cta",
+          "selector": ".cta",
+          "node": "58:4530",
+          "y": 5633,
+          "h": 628
+        },
+        {
+          "id": "faq",
+          "selector": ".faq",
+          "node": "58:4540",
+          "y": 6261,
+          "h": 781
+        },
+        {
+          "id": "footer",
+          "selector": ".site-footer",
+          "node": "58:4563",
+          "y": 7042,
+          "h": 224
+        }
+      ]
+    },
+    "sp": {
+      "width": 390,
+      "height": 844,
+      "reference": "references/figma/v2-20261018/sp-390-full-134-5068@1x-trim.png",
+      "sections": [
+        {
+          "id": "header",
+          "selector": ".site-header",
+          "node": "58:4594",
+          "y": 0,
+          "h": 79
+        },
+        {
+          "id": "hero",
+          "selector": ".hero",
+          "node": "58:4598",
+          "y": 79,
+          "h": 879
+        },
+        {
+          "id": "audience",
+          "selector": ".audience",
+          "node": "58:4626",
+          "y": 958,
+          "h": 128
+        },
+        {
+          "id": "problems",
+          "selector": ".problems",
+          "node": "58:4629",
+          "y": 1086,
+          "h": 974
+        },
+        {
+          "id": "benefits",
+          "selector": ".benefits",
+          "node": "58:4653",
+          "y": 2060,
+          "h": 570
+        },
+        {
+          "id": "areas",
+          "selector": ".areas",
+          "node": "58:4669",
+          "y": 2630,
+          "h": 1002
+        },
+        {
+          "id": "preview",
+          "selector": ".preview",
+          "node": "58:4693",
+          "y": 3632,
+          "h": 1693
+        },
+        {
+          "id": "steps",
+          "selector": ".steps",
+          "node": "58:4720",
+          "y": 5325,
+          "h": 864
+        },
+        {
+          "id": "why",
+          "selector": ".why",
+          "node": "58:4739",
+          "y": 6189,
+          "h": 2147
+        },
+        {
+          "id": "cta",
+          "selector": ".cta",
+          "node": "58:4757",
+          "y": 8336,
+          "h": 707
+        },
+        {
+          "id": "faq",
+          "selector": ".faq",
+          "node": "58:4767",
+          "y": 9043,
+          "h": 697
+        },
+        {
+          "id": "footer",
+          "selector": ".site-footer",
+          "node": "58:4790",
+          "y": 9740,
+          "h": 337
+        }
+      ]
+    }
+  }
+}

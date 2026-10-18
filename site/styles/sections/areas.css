@@ -1,0 +1,48 @@
+@layer sections {
+  /* 04 / Diagnostic Axes  PC 58:4442（1440×673）  SP 58:4669（390×1170） */
+  .areas {
+    background: var(--stc-paper);
+  }
+
+  /* PC：左列604px・右列628px・計1256px（右端は内容幅1280より24px手前）。Figmaの幅差を維持（D-008） */
+  .areas__list {
+    display: grid;
+    grid-template-columns: minmax(0, 604fr) minmax(0, 628fr);
+    gap: var(--space-24);
+    max-width: 1256px;
+  }
+
+  .areas__item {
+    background: var(--color-card-rose);
+  }
+
+  @media (max-width: 767px) {
+    /* 各カードの後に区切り線（gap24 + 1px + gap24） */
+    .areas__list {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--space-24) * 2 + 1px);
+      padding-bottom: calc(var(--space-24) + 1px);
+    }
+
+    .areas__item {
+      border-radius: var(--radius-12);
+    }
+
+    .areas__item::after {
+      position: absolute;
+      right: 0;
+      bottom: calc((var(--space-24) + 1px) * -1);
+      left: 0;
+      height: 1px;
+      background: var(--stc-border);
+      content: '';
+    }
+
+    .areas__item .c-numcard__num {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+  }
+}

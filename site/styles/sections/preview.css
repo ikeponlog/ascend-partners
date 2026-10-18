@@ -1,0 +1,254 @@
+@layer sections {
+  /* 05 / Diagnostic Preview  PC 58:4466（1440×862）  SP 58:4693（390×1693）
+     2026-10-18 Figma更新（D-051）：背景画像（ドットの波）、人物写真、半透明・角丸16の結果カード */
+  .preview {
+    position: relative;
+    overflow: hidden; /* 人物写真はセクション下端で切れる（Figmaどおり） */
+    isolation: isolate;
+    background: var(--stc-canvas);
+  }
+
+  .preview__bg,
+  .preview__bg img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .preview__bg img {
+    max-width: none;
+    object-fit: cover;
+  }
+
+  .preview__split {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-64);
+  }
+
+  .preview__copy {
+    display: flex;
+    flex: 0 1 584px;
+    flex-direction: column;
+    gap: var(--space-32);
+    min-width: 0;
+  }
+
+  .preview__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .preview__text {
+    color: var(--stc-muted);
+    line-height: var(--lh-body);
+  }
+
+  /* 人物写真（PC 154:7024）：Figmaではチェックリスト枠の中に絶対配置（左191・上100）。
+     1280px以上はコピー列が584px固定で改行が変わらないため、コピー列の上端から上338（見出し144＋32＋本文30＋32＋100）に置く */
+  .preview__copy {
+    position: relative;
+  }
+
+  .preview__people--pc {
+    position: absolute;
+    top: 338px;
+    left: 191px;
+    width: 501px;
+    height: 510.776px;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  /* 参照のない768〜1279px：コピー列が狭く、絶対配置では結果カードの下に入り込むため、
+     コピーの下に通常の流れで置き、SPと同じくセクションの下端まで伸ばす（D-051） */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .preview__copy {
+      align-self: stretch;
+    }
+
+    .preview__people--pc {
+      position: static;
+      margin-top: auto;
+      width: min(100%, 420px);
+      height: auto;
+      aspect-ratio: 501 / 510.776;
+      margin-bottom: calc(var(--section-space) * -1);
+    }
+  }
+
+  /* Figmaの重なり順：注記・結果カードは人物写真より手前 */
+  .preview__note,
+  .preview__card {
+    position: relative;
+  }
+
+  .preview__checklist {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .preview__checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-12);
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  /* Markers / Number（DADS）：右揃え14px、最小幅32px */
+  .preview__marker {
+    flex: none;
+    width: 32px;
+    padding-right: 18px;
+    color: var(--color-marker);
+    font-weight: 400;
+    line-height: round(1.7em, 1px); /* DADS Markers 1.7。Figmaと同じく整数pxに丸める（D-005） */
+    letter-spacing: 0.32px;
+    text-align: right;
+  }
+
+  .preview__note {
+    color: var(--stc-muted);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .preview__card {
+    display: flex;
+    flex: 0 1 632px;
+    flex-direction: column;
+    gap: var(--space-20);
+    min-width: 0;
+    padding: var(--space-24);
+    border-radius: var(--radius-16);
+    background: rgb(255 255 255 / 0.7);
+  }
+
+  .preview__card-eyebrow {
+    color: var(--stc-muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .preview__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .preview__results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+  }
+
+  .preview__result {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-16);
+    padding: var(--space-24);
+    border-radius: var(--radius-16);
+    background: var(--stc-warning-bg);
+  }
+
+  .preview__result--ready {
+    background: var(--stc-success-bg);
+  }
+
+  .preview__badge {
+    flex: none;
+    padding: 6px var(--space-12);
+    border-radius: var(--radius-8);
+    background: var(--stc-warning);
+    color: var(--stc-paper);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+
+  .preview__result--ready .preview__badge {
+    background: var(--stc-success);
+  }
+
+  .preview__result-body {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    gap: var(--space-12);
+    min-width: 1px;
+  }
+
+  .preview__result-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .preview__result-text {
+    color: var(--stc-muted);
+    line-height: var(--lh-body);
+  }
+
+  .preview__card-note {
+    color: var(--stc-muted);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @media (max-width: 767px) {
+    /* 下端は人物写真がセクションの端まで（下padding 0） */
+    .preview__split {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-24);
+      padding-bottom: 0;
+    }
+
+    /* 人物写真（154:7036）：カードの12px下、左11（内容の左端−13）、341×347 */
+    .preview__people--sp {
+      width: min(341px, 100vw - 22px); /* 390未満では左右の余白を保って縮小（参照なし） */
+      max-width: none;
+      height: auto;
+      aspect-ratio: 341 / 347;
+      margin: calc(var(--space-12) - var(--space-24)) 0 0 calc(11px - var(--page-gutter));
+      object-fit: cover;
+    }
+
+    .preview__copy,
+    .preview__header {
+      flex: none;
+      gap: var(--space-24);
+    }
+
+    .preview__checklist-sp {
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    .preview__card {
+      flex: none;
+      background: var(--stc-paper);
+    }
+
+    .preview__badge {
+      font-weight: 400;
+    }
+
+    .preview__result {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .preview__result-body {
+      flex: none;
+      width: 100%;
+    }
+  }
+}

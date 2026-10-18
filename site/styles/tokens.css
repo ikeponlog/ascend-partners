@@ -1,0 +1,115 @@
+/* 実測トークン：Figma変数（STC v3）と実測値のみ。出典は docs/design-inventory.md */
+@layer tokens {
+  :root {
+    /* Color — Figma variables */
+    --stc-ink: #222b33;
+    --stc-muted: #5b6168;
+    --stc-paper: #ffffff;
+    --stc-brand: #af1717;
+    --stc-canvas: #f5f4f1;
+    --stc-border: #d8dcdf;
+    --stc-dark: #202222;
+    --stc-tint: #faf2ef;
+    --stc-warning: #7a4b00;
+    --stc-warning-bg: #fff5de;
+    --stc-success: #21634a;
+    --stc-success-bg: #edf6f0;
+    --stc-hover: #871111;
+    --stc-pressed: #640d0d;
+    --stc-focus: #005fcc;
+    --stc-error: #b42318;   /* 診断フロー：エラー（58:4310 / 64:5135） */
+    --stc-control: #767d84; /* 診断フロー：入力・回答の枠（58:4289 / 58:4310） */
+    /* Color — Figma実測（変数化されていない値） */
+    --color-card-rose: #f3ecee;
+    --color-marker: #333333; /* --color-neutral-solid-gray-800 */
+    --color-hero-tag-pc: rgb(255 255 255 / 0.4);
+    --color-hero-tag-sp: rgb(255 255 255 / 0.5);
+
+    /* Font family（役割変数） */
+    /* '… Full' は納品ビルド（dist）でのみ定義される全文字の代替（scripts/build.mjs）。
+       dist の 'Noto … Variable' はサイト内の使用文字だけの派生ファイルのため、入力文字など範囲外の文字はここで描画する。
+       site/（開発）では未定義のため無視される */
+    --font-body: 'Noto Sans JP Variable', 'Noto Sans JP Variable Full', 'Noto Sans JP', sans-serif;
+    --font-heading: 'Noto Serif JP Variable', 'Noto Serif JP Variable Full', 'Noto Serif JP', serif;
+    --font-label: 'EB Garamond Variable', 'EB Garamond', 'Noto Sans JP Variable', 'Noto Sans JP Variable Full', 'Noto Sans JP', serif;
+    --font-num: var(--font-label);
+    --font-faq-q: 'Inter Variable', 'Inter', 'Noto Sans JP Variable', 'Noto Sans JP Variable Full', 'Noto Sans JP', sans-serif;
+    --font-produce: 'Lexend Deca Variable', 'Lexend Deca', sans-serif; /* 診断ヘッダー「Produce by」（PC） */
+    --color-produce: #1e1e1e;
+
+    /* Line height — Figma text styles（比率はFigmaの値）
+       Figmaは比率から求めた行送りを整数pxに丸めて描画する（16×1.85=29.6→30、28×1.55=43.4→43、14×1.65=23.1→23。
+       参照画像の行ピッチ実測30.0px、テキスト枠 9行=270）。各要素の文字サイズで round() して同じ行送りにする（D-005、R2）。
+       em は使用する要素で解決されるため、値は使う側で計算される。 */
+    --lh-heading: round(1.55em, 1px); /* STC v3/heading 1.55 */
+    --lh-body: round(1.85em, 1px);    /* STC v3/body 1.85 */
+    --lh-caption: round(1.65em, 1px); /* STC v3/caption 1.65 */
+    --lh-label: round(1.5em, 1px);    /* STC v3/label 1.5 */
+
+    /* Space — Figma variables (--stc-space-*) */
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-64: 64px;
+    --space-80: 80px;
+    /* Space — 実測値のうち変数外の値（docs/spacing-audit.md で維持判定） */
+    --space-28: 28px;
+    --space-48: 48px;
+    --space-56: 56px;
+    --space-72: 72px;
+    --space-96: 96px;
+
+    /* 役割トークン（PC値を既定、SPは下で再定義） */
+    --page-gutter: var(--space-80);
+    --section-space: var(--space-80);
+    --section-space-emphasis: var(--space-96); /* 07 Why Ascend（PC） */
+    --section-stack: var(--space-32);
+    --card-padding: var(--space-24);
+    --card-gap: var(--space-24);
+
+    /* Radius / size */
+    --radius-8: 8px;
+    --radius-12: 12px;
+    --radius-16: 16px;
+    --radius-pill: 999px;
+    --content-max: 1280px;
+    --btn-height: 64px;
+    --focus-ring: 3px;
+
+    /* 追従ヘッダー（2026-10-18 ご依頼。D-046）：最上部はFigmaの高さ、スクロール後は縮めた高さ */
+    --header-h: 120px;
+    --header-h-compact: 80px;
+
+    /* 動き（2026-10-18 ご依頼。D-047）：減速カーブ・時間・浮き上がりの影。prefers-reduced-motion では使わない */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 0.2s;
+    --dur-base: 0.4s;
+    --dur-reveal: 0.8s;
+    --reveal-distance: 24px;
+    --shadow-header: 0 4px 20px rgb(34 43 51 / 0.08);
+    --shadow-raise: 0 12px 32px rgb(34 43 51 / 0.12);
+  }
+
+  /* 参照なし幅（768–1023px）の仮定：handoff仕様「768〜1023px 左右32px」に合わせる */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+      --page-gutter: var(--space-32);
+    }
+  }
+
+  @media (max-width: 767px) {
+    :root {
+      --page-gutter: var(--space-24);
+      --section-space: var(--space-24);
+      --section-space-emphasis: var(--space-56);
+      --section-stack: var(--space-24);
+      --header-h: 79px;
+      --header-h-compact: 59px; /* ロゴ（25px）が整数px位置になる高さ（D-060） */
+    }
+  }
+}

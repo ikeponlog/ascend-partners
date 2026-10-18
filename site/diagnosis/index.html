@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- favicon：公式サイト（ascend-tax.jp）と同じ画像（D-057） -->
+  <link rel="icon" href="../assets/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="../assets/favicon/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/favicon/favicon-180x180.png">
+  <!-- 仮タイトル：正式なtitle / meta は未確定（docs/implementation-decisions.md D-012） -->
+  <title>STARTUP TAX CHECK｜アセンドパートナーズ会計事務所</title>
+  <link rel="stylesheet" href="../assets/fonts/noto-sans-jp/index.css">
+  <link rel="stylesheet" href="../assets/fonts/eb-garamond/index.css">
+  <link rel="stylesheet" href="../assets/fonts/lexend-deca/index.css">
+  <link rel="stylesheet" href="../styles/diagnosis.css">
+  <script type="module" src="../scripts/diagnosis/main.js"></script>
+  <!-- 依存モジュールを並列に先読み（import の段階的な発見による待ちを避ける。R3 性能） -->
+  <link rel="modulepreload" href="../scripts/diagnosis/app.js">
+  <link rel="modulepreload" href="../scripts/diagnosis/questions.js">
+  <link rel="modulepreload" href="../scripts/diagnosis/logic.js">
+  <link rel="modulepreload" href="../scripts/diagnosis/views.js">
+  <link rel="modulepreload" href="../scripts/diagnosis/content.js">
+  <link rel="modulepreload" href="../scripts/diagnosis/submit.js">
+</head>
+<body class="dx" data-surface="canvas">
+  <!-- Header / PC diagnostic 64:3245（1440×108）・SP Header 85:2244（390×96） -->
+  <header class="dx-header">
+    <p class="dx-brand">
+      <!-- LINK-012：ロゴからLPのトップへ（2026-10-18 ご依頼。D-062）。回答はページを離れると消える（中断確認と同じ扱い） -->
+      <!-- リンク名は見えている表記（画像の代替テキスト＋Produce by）から作る（WCAG 2.5.3）。行き先は視覚的に隠した文で補う -->
+      <a class="dx-brand__link" href="../" data-link-id="LINK-012">
+        <span class="dx-brand__product"><img src="../assets/logos/taxcheck-crop.webp" width="540" height="182" alt="STARTUP TAX CHECK"></span>
+        <span class="dx-brand__produce">Produce by</span>
+        <img class="dx-brand__logo" src="../assets/logos/logo.svg" width="320" height="35" alt="アセンドパートナーズ会計事務所">
+        <span class="u-visually-hidden">（トップページへ）</span>
+      </a>
+    </p>
+    <button class="c-cta c-cta--secondary dx-header__action" id="dx-header-action" type="button" data-action="abort">
+      <span class="c-cta__label">診断を中断する</span>
+      <span class="c-cta__capsule" aria-hidden="true"><img src="../assets/icons/arrow-capsule-white.svg" width="16" height="16" alt=""></span>
+    </button>
+  </header>
+
+  <!-- 画面はJS（scripts/diagnosis/）で描画。JSが動かない環境では診断を利用できない（D-031） -->
+  <main class="dx-main" id="dx-main"></main>
+</body>
+</html>

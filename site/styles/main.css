@@ -1,0 +1,30 @@
+/* 読込順と@layerの順序：tokens → base → components → sections → utilities
+   PCの値を既定とし、SP（〜767px）は各ファイル内のメディアクエリで上書きする */
+@layer tokens, base, components, sections, utilities;
+
+@import url('tokens.css');
+@import url('base.css');
+
+@import url('components/layout.css');
+@import url('components/heading.css');
+@import url('components/cta.css');
+@import url('components/numcard.css');
+
+@import url('sections/header.css');
+@import url('sections/sp-menu.css');
+@import url('sections/hero.css');
+@import url('sections/audience.css');
+@import url('sections/problems.css');
+@import url('sections/benefits.css');
+@import url('sections/areas.css');
+@import url('sections/preview.css');
+@import url('sections/steps.css');
+@import url('sections/why.css');
+@import url('sections/cta.css');
+@import url('sections/faq.css');
+@import url('sections/footer.css');
+
+/* 動き・ホバー（D-047）：各レイヤーのブロックをこのファイル内で宣言 */
+@import url('motion.css');
+
+@import url('utilities.css');

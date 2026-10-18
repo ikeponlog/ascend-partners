@@ -1,0 +1,13 @@
+@layer components {
+  /* セクション内側：PC 1440幅で左右80px・内容幅1280px。1440超は内容幅1280pxで中央寄せ（D-006） */
+  .l-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--section-stack);
+    width: 100%;
+    max-width: calc(var(--content-max) + var(--page-gutter) * 2);
+    margin-inline: auto;
+    padding: var(--section-space) var(--page-gutter);
+  }
+}

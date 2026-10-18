@@ -1,0 +1,88 @@
+@layer sections {
+  /* 結果 A / B / C  PC 64:5344・64:5467・64:5585 / SP 64:2319・64:2430・64:2536 */
+  .dx-priorities {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dx-gap);
+    width: 100%;
+  }
+
+  .dx-priority,
+  .dx-ready,
+  .dx-next {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    width: 100%;
+    padding: var(--space-20);
+    border-radius: var(--radius-16);
+  }
+
+  .dx-priority {
+    background: var(--stc-warning-bg);
+  }
+
+  .dx-priority__label {
+    color: var(--stc-warning);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .dx-priority__title,
+  .dx-next__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .dx-priority__body,
+  .dx-next p {
+    line-height: 28px;
+  }
+
+  .dx-ready {
+    background: var(--stc-success-bg);
+    color: var(--stc-success);
+  }
+
+  .dx-ready__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .dx-ready__list {
+    line-height: 28px;
+  }
+
+  /* PC（64:5367 / 64:5485）は項目を区切りなしで1行に連ねて表示（Figmaどおり）。
+     リスト化（SPの表現）は承認待ちの提案（D-027）。読み上げ用に ul/li の構造は残す */
+  .dx-ready__list li {
+    display: inline;
+  }
+
+  .dx-next {
+    gap: var(--space-16);
+  }
+
+  .dx-next--success {
+    background: var(--stc-success-bg);
+  }
+
+  .dx-next--paper {
+    background: var(--stc-paper);
+  }
+
+  @media (max-width: 767px) {
+    /* SP（64:2340 / 64:2446）は項目ごとに改行 */
+    .dx-ready__list li {
+      display: list-item;
+    }
+
+    .dx-eyebrow--result {
+      font-family: var(--font-label);
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+/* 動き・ホバー（2026-10-18 ご依頼：UXに配慮したアニメーション・ギミック・フェードアップ・ホバー効果。D-047）
+   ・すべて prefers-reduced-motion: no-preference の時だけ動かす（動きを減らす設定では静止・最初から表示）。
+   ・ホバー効果はホバーできる端末（hover: hover）だけ。押せる要素の見た目の変化は色・影・位置のみで、寸法は変えない。
+   ・初期表示（画面最上部・静止状態）はFigmaどおりの見た目のまま。 */
+
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    /* フェードアップ（scripts/motion.js が画面外の要素にだけ .reveal を付け、画面に入ると .is-revealed） */
+    .reveal {
+      opacity: 0;
+      transform: translateY(var(--reveal-distance));
+      transition:
+        opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms);
+    }
+
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Brand CTA：浮き上がり＋矢印カプセルの矢印が前へ（色の変化はFigmaの Hover / Pressed のまま） */
+    /* ホバーの浮き上がりは translate、フェードアップは opacity / transform で別々に動かす（両方の要素がある） */
+    .c-cta,
+    .c-numcard {
+      transition:
+        opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        translate var(--dur-base) var(--ease-out),
+        box-shadow var(--dur-base) var(--ease-out),
+        background-color var(--dur-fast);
+    }
+
+    .c-cta__capsule img {
+      transition: transform var(--dur-base) var(--ease-out);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .c-cta:hover {
+      box-shadow: var(--shadow-raise);
+      translate: 0 -2px;
+    }
+
+    .c-cta:hover .c-cta__capsule img {
+      transform: translateX(4px);
+    }
+
+    .c-cta:active {
+      box-shadow: none;
+      translate: none;
+    }
+
+    /* 番号付きカード：少し浮き上がる（リンクではないためカーソルは変えない） */
+    .c-numcard:hover {
+      box-shadow: var(--shadow-raise);
+      translate: 0 -4px;
+    }
+  }
+
+  /* 印刷では動きの途中状態を出さない */
+  @media print {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
+@layer sections {
+  @media (prefers-reduced-motion: no-preference) {
+    /* ヒーロー：読込時にコピーとキャプションが順に浮かび上がる（背景写真は動かさない＝LCPに影響しない） */
+    .hero__copy > *,
+    .hero__person {
+      animation: hero-rise var(--dur-reveal) var(--ease-out) both;
+    }
+
+    .hero__copy > :nth-child(2) { animation-delay: 80ms; }
+    .hero__copy > :nth-child(3) { animation-delay: 160ms; }
+    .hero__copy > :nth-child(4) { animation-delay: 240ms; }
+    .hero__copy > :nth-child(5) { animation-delay: 300ms; }
+    .hero__person { animation-delay: 360ms; }
+
+    @keyframes hero-rise {
+      from {
+        opacity: 0;
+        transform: translateY(var(--reveal-distance));
+      }
+    }
+
+    /* Benefits / Steps の矢印：カードが表示されたら次へ促すように2回だけ進む（SP・縦積みでは下向き） */
+    .benefits__arrow,
+    .steps__arrow {
+      --nudge: 6px 0;
+    }
+
+    .is-revealed .benefits__arrow,
+    .is-revealed .steps__arrow {
+      animation: arrow-nudge 1.2s var(--ease-out) 0.6s 2;
+    }
+
+    @keyframes arrow-nudge {
+      50% { translate: var(--nudge); }
+    }
+
+    /* 追従ヘッダーの下端に、ページの読み進み具合を示す細い線（スクロール連動。対応ブラウザのみ） */
+    @supports (animation-timeline: scroll()) {
+      .site-header::after {
+        position: absolute;
+        inset: auto 0 0;
+        height: 2px;
+        background: var(--stc-brand);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        animation: read-progress linear both;
+        animation-timeline: scroll(root block);
+        content: '';
+      }
+
+      @keyframes read-progress {
+        to { transform: scaleX(1); }
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .steps__arrow {
+      --nudge: 0 6px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .benefits__arrow,
+    .steps__arrow {
+      --nudge: 0 6px;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    /* テキストリンク：下線が左から伸び、↗ が右上へ */
+    .why__message-link,
+    .site-footer__links a {
+      background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+      transition: background-size var(--dur-base) var(--ease-out), color var(--dur-fast);
+    }
+
+    .why__message-link:hover,
+    .site-footer__links a:hover {
+      background-size: 100% 1px;
+    }
+
+    /* 結果の一例のカード：各結果が少し右へ（結果が並ぶ様子を強調） */
+    .preview__result {
+      transition:
+        opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        translate var(--dur-base) var(--ease-out);
+    }
+
+    .preview__result:hover {
+      translate: 4px 0;
+    }
+  }
+}

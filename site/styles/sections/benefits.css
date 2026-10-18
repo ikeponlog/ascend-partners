@@ -1,0 +1,101 @@
+@layer sections {
+  /* 03 / Benefits  PC 58:4426（1440×496）  SP 58:4653（390×570） */
+  .benefits {
+    background: var(--stc-paper);
+  }
+
+  /* PC：3項目＋矢印コネクタ（幅40px）。項目間 = gap24 + 40 + gap24 */
+  .benefits__list {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--space-24) * 2 + 40px);
+  }
+
+  .benefits__item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .benefits__arrow {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(100% + var(--space-24) + 8px);
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 参照のない768〜1199px：3列では本文幅が100px前後まで狭まるため縦積みにし、矢印は下向き（SPの構成に準拠、D-013） */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .benefits__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 40px;
+    }
+
+    .benefits__arrow {
+      top: calc(100% + 8px);
+      left: calc(50% - 12px);
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .benefits {
+      background: var(--stc-tint);
+    }
+
+    .benefits__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-32);
+    }
+
+    .benefits__item {
+      flex-direction: row;
+      gap: var(--space-16);
+      padding: 0;
+    }
+
+    .benefits__item .c-numcard__num {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: var(--lh-heading);
+    }
+
+    .benefits__item .c-numcard__body {
+      flex: 0 1 var(--benefit-text-w);
+      gap: var(--space-16);
+    }
+
+    /* 番号幅・本文幅はFigmaの各項目の実測（本文幅が改行位置を決める） */
+    .benefits__item .c-numcard__num {
+      width: var(--benefit-num-w);
+    }
+
+    .benefits__item:nth-child(1) {
+      --benefit-num-w: 39px;
+      --benefit-text-w: 264px;
+    }
+
+    .benefits__item:nth-child(2) {
+      --benefit-num-w: 40px;
+      --benefit-text-w: 259px;
+    }
+
+    .benefits__item:nth-child(3) {
+      --benefit-num-w: 38px;
+      --benefit-text-w: 255px;
+    }
+
+    /* 下向き矢印：Figmaの配置（項目下端から +0.8px / +4.6px）を項目ごとに保持 */
+    .benefits__arrow {
+      top: calc(100% + var(--arrow-offset, 0.8px));
+      left: calc(50% - 12px);
+      transform: rotate(90deg);
+    }
+
+    .benefits__item:nth-child(2) .benefits__arrow {
+      --arrow-offset: 4.6px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@layer components {
+  /* STC v3 / Brand CTA（60:291）：ピル型＋矢印カプセル。状態色はFigmaの各State */
+  .c-cta {
+    --cta-bg: var(--stc-brand);
+    --cta-fg: var(--stc-paper);
+    --cta-capsule: var(--stc-paper);
+    position: relative;
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--space-16);
+    width: var(--cta-width, 344px);
+    max-width: 100%;
+    height: var(--btn-height);
+    padding: 0 var(--space-20) 0 var(--space-24);
+    border-radius: var(--radius-pill);
+    background: var(--cta-bg);
+    color: var(--cta-fg);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: var(--lh-label);
+    cursor: pointer;
+  }
+
+  .c-cta:focus-visible {
+    outline: var(--focus-ring) solid var(--stc-focus);
+    outline-offset: calc(var(--focus-ring) * -1);
+  }
+
+  .c-cta__label {
+    /* ラベルだけ文字サイズを変える箇所（相談CTA 18px）でも、親の丸め後の値を継承せず自分の文字サイズで計算する */
+    line-height: var(--lh-label);
+    flex: 1 0 0;
+    min-width: 1px;
+    text-align: left;
+  }
+
+  .c-cta__capsule {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 22px;
+    overflow: clip;
+    border-radius: var(--radius-pill);
+    background: var(--cta-capsule);
+  }
+
+  /* 商品ロゴ「STARTUP TAX CHECK」：インスタンスごとの配置（--product-x / --product-y）はFigma実測 */
+  .c-cta__product {
+    position: absolute;
+    top: var(--product-y, 15px);
+    left: var(--product-x, 167px);
+    width: 129px;
+    height: 34px;
+    pointer-events: none;
+  }
+
+  /* 390px未満（参照なし）：ボタンが狭く、TAX CHECKロゴが矢印・ラベルに重なるため、矢印の左に右寄せし、
+     ラベル（左24＋約128）と矢印（右20＋36）の間の幅に収まるよう縮小。340px未満は小さくなりすぎるため表示しない（2026-10-18。D-063） */
+  @media (max-width: 389px) {
+    .c-cta__product {
+      top: 50%;
+      right: 66px;
+      left: auto;
+      width: min(129px, calc(100% - 228px));
+      height: auto;
+      aspect-ratio: 129 / 34;
+      translate: 0 -50%;
+    }
+  }
+
+  @media (max-width: 339px) {
+    .c-cta__product {
+      display: none;
+    }
+  }
+
+  /* ヘッダー・ヒーロー：Figmaの画像塗りが枠いっぱいに伸縮（f1f25） */
+  .c-cta__product--fill {
+    object-fit: fill;
+  }
+
+  /* CTAセクション：元画像（a5bff）をFigmaのトリミング値で表示 */
+  .c-cta__product--crop {
+    overflow: hidden;
+  }
+
+  .c-cta__product--crop img {
+    position: absolute;
+    top: -21.74%;
+    left: -1.92%;
+    width: 101.73%;
+    max-width: none;
+    height: 130.43%;
+  }
+
+  .c-cta--primary:hover {
+    --cta-bg: var(--stc-hover);
+  }
+
+  .c-cta--primary:active {
+    --cta-bg: var(--stc-pressed);
+  }
+
+  .c-cta--inverse {
+    --cta-bg: var(--stc-paper);
+    --cta-fg: var(--stc-brand);
+    --cta-capsule: var(--stc-brand);
+  }
+
+  .c-cta--inverse:hover {
+    --cta-bg: var(--stc-canvas);
+  }
+
+  .c-cta--inverse:active {
+    --cta-bg: var(--stc-tint);
+  }
+
+  .c-cta--secondary {
+    --cta-bg: var(--stc-dark);
+    --cta-capsule: var(--stc-brand);
+  }
+
+  .c-cta--secondary:hover,
+  .c-cta--secondary:active {
+    --cta-bg: var(--stc-ink);
+  }
+}

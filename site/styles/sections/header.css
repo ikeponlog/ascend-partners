@@ -1,0 +1,127 @@
+@layer sections {
+  /* Header  PC 58:4367（1440×120）  SP 58:4594（390×79） */
+  /* 追従ヘッダー（2026-10-18 ご依頼。D-046）
+     position: fixed にして同じ高さの余白を本文の上に確保する（sticky だと縮めた分だけ本文が動くため）。
+     最上部ではFigmaどおりの高さ・見た目。スクロールすると縮み、影で本文と区切る（scripts/header.js が is-scrolled を付与） */
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    background: var(--stc-paper);
+    transition: box-shadow var(--dur-base) var(--ease-out);
+  }
+
+  /* ヘッダーとmainの間にSPメニュー（.sp-menu）があるため、隣接ではなく後続のmainに指定 */
+  .site-header ~ main {
+    padding-top: var(--header-h);
+  }
+
+  .site-header.is-scrolled {
+    box-shadow: var(--shadow-header);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-24);
+    max-width: calc(var(--content-max) + var(--page-gutter) * 2);
+    margin-inline: auto;
+    padding: var(--space-28) var(--page-gutter);
+    transition: padding var(--dur-base) var(--ease-out);
+  }
+
+  /* 縮めた状態：内容（CTA 64px）の上下余白だけを詰める */
+  .is-scrolled .site-header__inner {
+    padding-block: calc((var(--header-h-compact) - var(--btn-height)) / 2);
+  }
+
+  /* ページ内リンク：下線が左から伸びる（ホバー・フォーカス時。D-047） */
+  .site-header__links a {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size var(--dur-base) var(--ease-out), color var(--dur-fast);
+  }
+
+  .site-header__links a:hover,
+  .site-header__links a:focus-visible {
+    color: var(--stc-brand);
+    background-size: 100% 1px;
+  }
+
+  /* ロゴ本体 365.714×39.853（枠 370.286×40） */
+  .site-header__logo {
+    flex: 0 1 370.286px;
+    min-width: 0;
+    height: 40px;
+  }
+
+  /* 参照幅では365.714×40。参照のない768〜795px付近ではCTAと並ぶよう比率を保って縮小（D-007） */
+  /* 2026-10-18 ご依頼（ロゴを鮮明に。D-060）：高さを整数px（40）にして、横線が2行の画素にまたがってぼやけないようにする */
+  .site-header__logo img {
+    width: auto;
+    max-width: 100%;
+    height: 40px;
+    aspect-ratio: 320 / 35;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .site-header__nav {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--space-28);
+  }
+
+  /* Figmaは1テキスト「診断について　　事務所紹介　　FAQ」（幅344）。全角スペース2つ分の間隔をリンク間に置く */
+  .site-header__links {
+    display: flex;
+    gap: calc(2em + 0.96px);
+    width: 344px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: var(--lh-caption);
+    letter-spacing: 0.48px;
+  }
+
+  .site-header__cta {
+    --cta-width: 368px;
+    --product-x: 167px;
+    --product-y: 17px;
+  }
+
+  /* 参照のない中間幅：テキストリンクを省きCTAのみ残す（D-007、承認待ち） */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .site-header__links {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    /* SP：高さはFigmaの79（スクロール中60）に固定し、ロゴとメニューボタン（40）を上下中央に置く（D-056） */
+    .site-header__inner {
+      min-height: var(--header-h);
+      padding: 0 var(--space-24);
+      transition: min-height var(--dur-base) var(--ease-out);
+    }
+
+    .is-scrolled .site-header__inner {
+      min-height: var(--header-h-compact);
+      padding-block: 0;
+    }
+
+    /* SP：ロゴ枠342×31、ロゴ本体320×34.87は枠からはみ出したまま表示（Figmaどおり） */
+    .site-header__logo {
+      width: 100%;
+      height: 31px;
+    }
+
+    .site-header__logo img {
+      width: 320px;
+    }
+
+    .site-header__nav {
+      display: none;
+    }
+  }
+}

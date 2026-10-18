@@ -1,0 +1,358 @@
+@layer sections {
+  /* 01 / Hero  PC 58:4373（1440×658）  SP 58:4598（390×879） */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero__bg,
+  .hero__bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__bg {
+    z-index: -1;
+  }
+
+  .hero__bg img {
+    max-width: none;
+    object-fit: cover;
+  }
+
+  /* 写真を左上のキャプションに合わせて配置する（2026-10-18 ご依頼：幅によって顔に文字が重なる問題の修正。D-045）
+     Figma 1440 では人物の頭部（元画像 x560〜810）の左端が、キャプション（幅260）の右端から8px右にある。
+     画面中央基準の cover では、幅が変わると頭部が左右に動いてキャプションに重なるため、
+     「内容の左端＋268px」に頭部の左端（元画像幅の26.503%）が来るよう写真を置く。
+     幅は「高さ100%」と「右端・左端を覆うのに必要な幅」の大きい方。1440では従来と同じ位置・倍率になる */
+  @media (min-width: 1200px) {
+    /* 非常に広い画面では写真の拡大で頭部がコピー列（中央−10px〜）に届くため、頭部の右端（元画像 x810）が
+       コピー列の16px手前に収まる位置を上限にし、その分だけキャプションを左へ寄せる（2240px以下では上限に達しない） */
+    .hero {
+      --hero-content-left: max(var(--page-gutter), calc(50cqw - var(--content-max) / 2));
+      /* 267.91 = Figma 1440 の頭部左端 347.91（cover 中央配置の -71.77 + 元画像 560×0.74946）− 内容の左端 80。1440で従来と画素一致 */
+      --hero-head-offset: 267.91px;
+      --hero-head-left: min(calc(var(--hero-content-left) + var(--hero-head-offset)), calc((50cqw - 26px) * 0.69136));
+      container-type: inline-size;
+    }
+
+    .hero__person {
+      position: relative;
+      left: calc(var(--hero-head-left) - var(--hero-head-offset) - var(--hero-content-left));
+    }
+
+    .hero__bg img {
+      right: auto;
+      bottom: auto;
+      left: var(--hero-head-left);
+      width: auto;
+      min-width: max(100cqw, calc(var(--hero-head-left) / 0.26503), calc((100cqw - var(--hero-head-left)) / 0.73497));
+      height: 100%;
+      aspect-ratio: 2113 / 878;
+      object-position: 50% 30%;
+      transform: translateX(-26.503%);
+    }
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-rows: minmax(522px, auto);
+    grid-template-columns: minmax(0, 566fr) minmax(0, 650fr);
+    column-gap: var(--space-64);
+    align-items: center;
+    max-width: calc(var(--content-max) + var(--page-gutter) * 2);
+    margin-inline: auto;
+    padding: var(--space-64) var(--page-gutter) var(--space-72);
+  }
+
+  .hero__copy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 2;
+    align-items: flex-start;
+    gap: var(--space-24);
+  }
+
+  .hero__target {
+    width: 360px;
+    height: 33px;
+    background: var(--stc-paper);
+  }
+
+  /* テキスト枠367pxの中央揃え（白帯360pxより広い） */
+  .hero__target span {
+    display: block;
+    width: 367px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: var(--lh-caption);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hero__title {
+    height: 216px;
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: var(--lh-heading);
+    text-shadow: 2px 2px 20px var(--stc-paper);
+  }
+
+  .hero__lead {
+    width: 580px;
+    max-width: 100%;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: var(--lh-body);
+    text-shadow: 2px 2px 20px var(--stc-paper);
+  }
+
+  .hero__cta {
+    --cta-width: 360px;
+    --product-x: 170px;
+    --product-y: 15.5px;
+  }
+
+  .hero__tag {
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    padding: var(--space-4) var(--space-8);
+    background: var(--color-hero-tag-pc);
+    color: var(--stc-brand);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.36px;
+    white-space: nowrap;
+  }
+
+  .hero__person {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+    gap: var(--space-4);
+    width: 260px;
+    margin-top: 128px;
+  }
+
+  .hero__motto {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: var(--lh-label);
+    white-space: nowrap;
+  }
+
+  .hero__name {
+    width: 247px;
+    color: var(--stc-muted);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: var(--lh-caption);
+    text-align: right;
+  }
+
+  /* 参照のない中間幅：見出し・本文が折り返すため固定高を外す */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    /* CTA（360px）と商品ロゴが重ならないよう、コピー列は360px未満にしない */
+    .hero__inner {
+      grid-template-columns: minmax(0, 566fr) minmax(360px, 650fr);
+    }
+
+    .hero__title,
+    .hero__lead {
+      height: auto;
+    }
+
+    .hero__target {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      padding-inline: var(--space-8);
+    }
+
+    .hero__target span {
+      width: auto;
+      white-space: normal;
+    }
+
+    .hero__tag {
+      white-space: normal;
+    }
+  }
+
+  /* 768〜1199px：写真が拡大され、頭部をキャプションとコピーの間に置けない。
+     SPと同じ扱いでキャプションを写真の下部（左下）に白文字で置き、左下だけ暗くして読みやすくする（D-045） */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .hero__bg::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgb(18 22 26 / 0.85) 0, rgb(18 22 26 / 0.62) 20%, rgb(18 22 26 / 0) 48%);
+      mask-image: linear-gradient(to right, #000 0, #000 38%, transparent 56%);
+      content: '';
+    }
+
+    .hero__person {
+      align-self: end;
+      margin-top: 0;
+      color: var(--stc-paper);
+    }
+
+    .hero__name {
+      color: var(--stc-paper);
+    }
+  }
+
+  @media (max-width: 767px) {
+    /* SPの写真（2026-10-18 差し替え・ご依頼で位置調整。D-058）：頭髪の上端（元画像 y965 / 高さ1906 ＝ 50.63%）を
+       タグ「無料 / 約3分…」の16px下に置く。タグの下端はヒーロー下端から常に395px上（写真枠・間隔・キャプションの高さが一定）のため、
+       頭髪の線＝下端から379px上。写真はその線を基準に置き、ヒーロー全体を覆う最小の大きさにする（上を覆う／下を覆う／幅を覆う、の最大） */
+    .hero {
+      --hero-sp-hair-line: 379px;
+      container-type: inline-size;
+    }
+
+    .hero__bg img {
+      inset: auto;
+      top: calc(100% - var(--hero-sp-hair-line));
+      left: 50%;
+      width: auto;
+      height: max(calc((100% - var(--hero-sp-hair-line)) / 0.5063), calc(var(--hero-sp-hair-line) / 0.4937), 231.03cqw);
+      aspect-ratio: 825 / 1906;
+      translate: -50% -50.63%;
+    }
+
+    /* SP：下端の暗いグラデーション。Figma（86.915% → 91.445% → 100%、最大20%）から、2026-10-18 の写真の位置調整（D-058）で
+       キャプションが手・上着の上に来るため、キャプションの背面を濃くして読みやすさ（4.5:1）を確保する */
+    .hero__bg::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgb(18 22 26 / 0.86) 0, rgb(18 22 26 / 0.7) 9%, rgb(18 22 26 / 0.35) 17%, rgb(18 22 26 / 0) 27%);
+      content: '';
+    }
+
+    /* Figmaの枠は高さ879px固定で、下padding 48pxより内容が長い。実効の下余白（約19px）を採用（S-014） */
+    .hero__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-64);
+      padding: var(--space-32) var(--page-gutter) 19px;
+    }
+
+    .hero__copy {
+      gap: var(--space-20);
+    }
+
+    /* 人物写真の表示枠（Photo / service_img_01.png 342×230）。写真は背景画像に含まれる */
+    .hero__copy::after {
+      height: 230px;
+      margin-top: var(--space-12);
+      content: '';
+    }
+
+    .hero__target {
+      width: 100%;
+      height: 31px;
+    }
+
+    .hero__target span {
+      width: 100%;
+      line-height: var(--lh-heading);
+    }
+
+    .hero__title {
+      height: auto;
+      font-size: 34px;
+      text-shadow: none;
+    }
+
+    .hero__lead {
+      width: 100%;
+      height: auto;
+      text-shadow: none;
+    }
+
+    .hero__cta {
+      --cta-width: 100%;
+      --product-x: 155px;
+      --product-y: 21.6px;
+    }
+
+    .hero__tag {
+      display: block;
+      width: 265px;
+      min-height: 0;
+      height: 28px;
+      padding: 0;
+      background: var(--color-hero-tag-sp);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: var(--lh-caption);
+      letter-spacing: 0;
+      white-space: pre;
+    }
+
+    .hero__person {
+      display: grid;
+      gap: 0;
+      width: 100%;
+      margin-top: 0;
+      color: var(--stc-paper);
+    }
+
+    .hero__motto,
+    .hero__name {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .hero__motto {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .hero__name {
+      width: 100%;
+      margin-top: 20px;
+      color: var(--stc-paper);
+      font-size: 13px;
+      font-weight: 400;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+
+    .hero__name-role,
+    .hero__name-gap {
+      font-size: 16px;
+    }
+
+    /* 文字サイズの違う行内要素は、親の丸め後の値を継承せず自分の文字サイズで行送りを計算する */
+    .hero__name > span {
+      line-height: var(--lh-caption);
+    }
+
+    .hero__name-role {
+      font-weight: 500;
+    }
+
+    .hero__name-gap,
+    .hero__name-person {
+      font-weight: 700;
+    }
+
+    .hero__name-person {
+      font-size: 18px;
+    }
+  }
+}

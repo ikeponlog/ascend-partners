@@ -1,0 +1,97 @@
+@layer sections {
+  /* メール受取 64:5703 / 30分相談 64:5820 / 入力エラー 64:5964 / 送信中 67:4380（SPは06 / 〜）。部品 STC / Text field 58:4310 */
+  .dx-form {
+    display: contents;
+  }
+
+  .dx-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    width: 100%;
+  }
+
+  .dx-field__label {
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  /* 入力：padding 16・枠1px #767d84・角丸8。プレースホルダーはFigmaどおり本文色 */
+  .dx-field__input {
+    width: 100%;
+    margin: 0;
+    padding: var(--space-16);
+    border: 1px solid var(--stc-control);
+    border-radius: var(--radius-8);
+    background: var(--stc-paper);
+    color: var(--stc-ink);
+    font: inherit;
+    line-height: 28px;
+  }
+
+  .dx-field__input::placeholder {
+    color: var(--stc-ink);
+    opacity: 1;
+  }
+
+  /* Focus状態：3px #005fcc（寸法を変えないよう padding を同量減らす） */
+  .dx-field__input:focus-visible {
+    padding: 14px;
+    border: 3px solid var(--stc-focus);
+    outline: none;
+  }
+
+  .dx-field__hint {
+    color: var(--stc-muted);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .dx-field.is-error .dx-field__input:not(:focus-visible) {
+    border-color: var(--stc-error);
+  }
+
+  .dx-field.is-error .dx-field__hint {
+    color: var(--stc-error);
+  }
+
+  /* チェックボックス：Figmaは「□」の文字。機能のためネイティブの入力に置き換え、文字と同程度の大きさにする（D-028） */
+  .dx-check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+
+  .dx-check input {
+    flex: none;
+    width: 12px;
+    height: 12px;
+    margin: 0 1px;
+    accent-color: var(--stc-brand);
+  }
+
+  .dx-check--required {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .dx-check--required input {
+    width: 14px;
+    height: 14px;
+  }
+
+  .dx-check.is-error {
+    color: var(--stc-error);
+  }
+
+  .dx-policy-link {
+    width: 100%;
+    color: var(--stc-brand);
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

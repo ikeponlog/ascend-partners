@@ -1,0 +1,45 @@
+@layer components {
+  /* 英字アイブロウ：PC EB Garamond SemiBold 24/20、SP Bold 20/20 */
+  .c-eyebrow {
+    color: var(--stc-brand);
+    font-family: var(--font-label);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  /* セクション見出し：PC Noto Serif JP Bold 36/1.55、SP Noto Serif JP Bold 24/36（SPは2026-10-18のFigma更新で Sans→Serif。D-050） */
+  .c-heading {
+    color: var(--stc-ink);
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: var(--lh-heading);
+  }
+
+  /* 見出し下の導入文：PC Medium 20/1.85 ink、SP Regular 16/1.85 muted */
+  .c-lead {
+    color: var(--stc-ink);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: var(--lh-body);
+  }
+
+  @media (max-width: 767px) {
+    .c-eyebrow {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .c-heading {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    .c-lead {
+      color: var(--stc-muted);
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}

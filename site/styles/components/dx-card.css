@@ -1,0 +1,202 @@
+@layer components {
+  /* 診断フローの画面枠。PC：Desktop content（背景 canvas・padding 40）に幅800のカード（枠1px・角丸8・padding 32・gap 20）
+     SP：カードなし（padding 24・gap 24）。フォーム系のSP画面のみ背景が白 */
+  .dx {
+    --dx-gap: var(--space-20);
+    --btn-height: 56px;
+    min-height: 100vh;
+    background: var(--stc-canvas);
+  }
+
+  .dx-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-40);
+  }
+
+  .dx-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--dx-gap);
+    width: 800px;
+    max-width: 100%;
+    padding: var(--space-32);
+    border: 1px solid var(--stc-border);
+    border-radius: var(--radius-8);
+    background: var(--stc-paper);
+  }
+
+  .dx-card > * {
+    max-width: 100%;
+  }
+
+  /* 見出し・本文 */
+  .dx-title,
+  .dx-heading {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .dx-title:focus {
+    outline: none;
+  }
+
+  .dx-lead {
+    width: 100%;
+    line-height: 28px;
+  }
+
+  .dx-lead--muted,
+  .dx-small {
+    color: var(--stc-muted);
+  }
+
+  .dx-small {
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .dx-eyebrow {
+    width: 100%;
+    color: var(--stc-brand);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  /* ラベル（Label / 〜）：padding 8・角丸8。幅はFigmaのインスタンス値 */
+  .dx-chip {
+    width: 180px;
+    padding: var(--space-8);
+    border-radius: var(--radius-8);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .dx-chip--tint {
+    width: 300px;
+    background: var(--stc-tint);
+    color: var(--stc-brand);
+  }
+
+  .dx-chip--warning {
+    background: var(--stc-warning-bg);
+    color: var(--stc-warning);
+  }
+
+  .dx-chip--success,
+  .dx-chip--success-wide {
+    background: var(--stc-success-bg);
+    color: var(--stc-success);
+  }
+
+  .dx-chip--success-wide {
+    width: 320px;
+  }
+
+  /* ボタン：Brand CTA（高さ56）を幅いっぱいで使う */
+  .dx-btn {
+    --cta-width: 100%;
+  }
+
+  .dx-btn[disabled] {
+    cursor: default;
+  }
+
+  .dx-text-link {
+    width: 100%;
+    color: var(--stc-muted);
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  .dx-text-link--brand {
+    color: var(--stc-brand);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .dx-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background: var(--stc-border);
+  }
+
+  .dx-error-summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    width: 100%;
+    padding: var(--space-16);
+    border-radius: var(--radius-8);
+    background: var(--stc-tint);
+    color: var(--stc-error);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .dx-error-summary--form {
+    gap: var(--space-16);
+  }
+
+  .dx-error-summary:focus {
+    outline: var(--focus-ring) solid var(--stc-focus);
+    outline-offset: 2px;
+  }
+
+  .dx-error-summary__title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* 参照なし幅：handoff「768〜1023px：診断カード幅704px・左右32px」 */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .dx-main {
+      padding-inline: var(--space-32);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .dx {
+      --dx-gap: var(--space-24);
+    }
+
+    .dx[data-surface='paper'] {
+      background: var(--stc-paper);
+    }
+
+    .dx-main {
+      align-items: stretch;
+      padding: var(--space-24);
+    }
+
+    .dx-card {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: none;
+    }
+  }
+
+  /* handoff「320pxでは左右16px・本文16pxを維持。長いCTAは2行可＋高さ自動」 */
+  @media (max-width: 359px) {
+    .dx-main {
+      padding-inline: var(--space-16);
+    }
+
+    .dx .c-cta {
+      height: auto;
+      min-height: var(--btn-height);
+      padding-block: var(--space-8);
+    }
+  }
+}

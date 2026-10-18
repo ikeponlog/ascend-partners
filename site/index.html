@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- favicon：公式サイト（ascend-tax.jp）と同じ画像（D-057） -->
+  <link rel="icon" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="assets/favicon/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/favicon/favicon-180x180.png">
+  <!-- 仮タイトル：正式なtitle / meta description は未確定（docs/implementation-decisions.md D-012） -->
+  <title>創業期の税務・会計、見落としはありませんか？｜STARTUP TAX CHECK｜アセンドパートナーズ会計事務所</title>
+  <link rel="preload" href="assets/images/hero-bg-pc.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" href="assets/images/hero-bg-sp-780.webp" as="image" media="(max-width: 767px)" imagesrcset="assets/images/hero-bg-sp-780.webp 780w, assets/images/hero-bg-sp-825.webp 825w" imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="assets/fonts/noto-sans-jp/index.css">
+  <link rel="stylesheet" href="assets/fonts/noto-serif-jp/index.css">
+  <link rel="stylesheet" href="assets/fonts/eb-garamond/index.css">
+  <link rel="stylesheet" href="assets/fonts/inter/index.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__logo">
+        <img class="site-header__logo-default" src="assets/logos/logo.svg" width="320" height="35" alt="アセンドパートナーズ会計事務所 ASCEND PARTNERS ACCOUNTING FIRM">
+        <!-- メニューを開いている間だけ表示（暗い背景用。A-008） -->
+        <img class="site-header__logo-reverse" src="assets/logos/logo-reverse.svg" width="320" height="35" alt="" aria-hidden="true">
+      </p>
+      <!-- SPのメニュー（2026-10-18 ご依頼：ascend-tax.jp のスマホ用メニューの仕様に合わせる。D-056）。JSが動く場合のみ表示 -->
+      <button class="sp-menu-toggle" type="button" aria-expanded="false" aria-controls="sp-menu" hidden>
+        <span class="u-visually-hidden sp-menu-toggle__label">メニューを開く</span>
+        <span class="sp-menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="site-header__nav" aria-label="ページ内メニュー">
+        <ul class="site-header__links">
+          <!-- LINK-002/003 は遷移先が推定。docs/project-brief.md のリンク表で要確認 -->
+          <li><a href="#benefits">診断について</a></li>
+          <li><a href="#why">事務所紹介</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <!-- LINK-001：診断フロー（site/diagnosis/）。Figmaプロトタイプの遷移先 64:3244 Q01 に対応 -->
+        <a class="c-cta c-cta--primary site-header__cta" href="diagnosis/" data-link-id="LINK-001">
+          <span class="c-cta__label">無料診断を始める</span>
+          <img class="c-cta__product c-cta__product--fill" src="assets/logos/taxcheck-fill.webp" width="129" height="34" alt="STARTUP TAX CHECK">
+          <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-brand.svg" width="16" height="16" alt=""></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SPメニュー本体（D-056）。開閉ボタン＋aria-expanded（ナビゲーションの開閉パターン）。
+       開いている間は本文・フッターを操作対象外（inert）にし、フォーカスはこのメニューと開閉ボタンだけを巡回 -->
+  <div class="sp-menu" id="sp-menu" hidden>
+    <nav class="sp-menu__nav" aria-label="ページ内メニュー（スマートフォン）">
+      <ul class="sp-menu__links">
+        <li><a href="#benefits">診断について</a></li>
+        <li><a href="#why">事務所紹介</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="sp-menu__actions">
+      <a class="c-cta c-cta--primary sp-menu__cta" href="diagnosis/" data-link-id="LINK-001">
+        <span class="c-cta__label">無料診断を始める</span>
+        <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-brand.svg" width="16" height="16" alt=""></span>
+      </a>
+      <a class="c-cta c-cta--inverse sp-menu__cta" href="diagnosis/#consult" data-link-id="LINK-005">
+        <span class="c-cta__label">30分無料相談を希望する</span>
+        <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-white.svg" width="16" height="16" alt=""></span>
+      </a>
+      <!-- LINK-011：電話（ascend-tax.jp に掲載の代表番号 03-3591-0144。2026-10-18 確認） -->
+      <a class="sp-menu__tel" href="tel:03-3591-0144" data-link-id="LINK-011">
+        <svg class="sp-menu__tel-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        <span><span class="u-visually-hidden">電話する：</span>03-3591-0144</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 01 / Hero  PC 58:4373  SP 58:4598 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero__bg">
+        <source media="(max-width: 767px)" srcset="assets/images/hero-bg-sp-780.webp 780w, assets/images/hero-bg-sp-825.webp 825w" sizes="100vw" width="825" height="1906">
+        <img src="assets/images/hero-bg-pc.webp" width="2113" height="878" alt="" fetchpriority="high">
+      </picture>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__target"><span>創業準備〜創業2年の経営者さまへ</span></p>
+          <h1 class="hero__title" id="hero-title">創業期の税務・会計、<br>見落としは<br>ありませんか？</h1>
+          <p class="hero__lead">会社設立時の届出から、日々の経理・資金管理まで。<br class="u-pc">最大12問のセルフチェックで、今、確認したいことと次の一歩を整理します。</p>
+          <a class="c-cta c-cta--primary hero__cta" href="diagnosis/" data-link-id="LINK-001">
+            <span class="c-cta__label">無料診断を始める</span>
+            <img class="c-cta__product c-cta__product--fill" src="assets/logos/taxcheck-fill.webp" width="129" height="34" alt="STARTUP TAX CHECK">
+            <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-brand.svg" width="16" height="16" alt=""></span>
+          </a>
+          <p class="hero__tag"><span class="u-pc">無料 / 約3分 / 登録なしで結果を確認</span><span class="u-sp">    無料  /  約3分  /  登録なしで結果を確認</span></p>
+        </div>
+        <div class="hero__person">
+          <p class="hero__motto">税務・会計を、経営の力に。</p>
+          <p class="hero__name u-pc">アセンドパートナーズ会計事務所<br>代表　鶴田 高志</p>
+          <p class="hero__name u-sp"><span class="hero__name-office">アセンドパートナーズ会計事務所  </span><span class="hero__name-role">代表</span><span class="hero__name-gap">  </span><span class="hero__name-person">鶴田 高志</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audience strip  PC 58:4401  SP 58:4626 -->
+    <section class="audience" aria-label="対象">
+      <div class="audience__inner">
+        <p class="audience__lead">会社をつくる前も、つくった後も。</p>
+        <p class="audience__list"><span class="u-pc">設立準備中　／　設立したばかり　／　最初の決算に向けて</span><span class="u-sp">設立準備中　／　設立したばかり　<br>最初の決算に向けて</span></p>
+      </div>
+    </section>
+
+    <!-- 02 / Problems  PC 58:4404  SP 58:4629 -->
+    <section class="problems" id="problems" aria-labelledby="problems-title">
+      <!-- 羽のシンボル（acendsymbol.svg と同じ図形をインライン化。2026-10-18 ご依頼：2枚の羽がそよぐ動き。D-049）
+           装飾のため読み上げ対象外。動きは styles/sections/problems.css（動きを減らす設定では静止） -->
+      <svg class="problems__symbol" viewBox="0 0 23.72 17.93" width="545" height="411" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="asym-g1" cx="9.8" cy="7.17" fx="9.8" fy="7.17" r="8.85" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffe246"/><stop offset=".32" stop-color="#ea4d07"/><stop offset=".79" stop-color="#c9000c"/><stop offset="1" stop-color="#a80001"/>
+          </radialGradient>
+          <radialGradient id="asym-g2" cx="15.47" cy="1.96" fx="15.47" fy="1.96" r="6.22" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#c1c1c1"/><stop offset=".79" stop-color="#1c1c1c"/><stop offset="1" stop-color="#343434"/>
+          </radialGradient>
+          <linearGradient id="asym-g5" x1="21.42" y1="4.52" x2="5.64" y2="-3.02" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#b0b0b0"/><stop offset="1" stop-color="#3d3d3d"/>
+          </linearGradient>
+          <radialGradient id="asym-g4" cx="13.73" cy="5.45" fx="13.73" fy="5.45" r="6.8" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#c1c1c1"/><stop offset=".7" stop-color="#1c1c1c"/><stop offset="1" stop-color="#343434"/>
+          </radialGradient>
+          <linearGradient id="asym-g5b" x1="17.41" y1="8.3" x2="9.5" y2="2.55" href="#asym-g5"/>
+          <clipPath id="asym-clip">
+            <polygon fill="none" points="3.67 13.12 17.87 .02 8.54 0 0 11.61 3.67 13.12"/>
+          </clipPath>
+          <radialGradient id="asym-g6" cx="-35.41" cy="-98.86" fx="-35.41" fy="-98.86" r="6.31" gradientTransform="translate(36.57 -97.36) rotate(-2.89) scale(1 -1) skewX(.47)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="asym-g7" cx="10.44" cy="7.17" fx="10.44" fy="7.17" r="8.54" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e60012"/><stop offset=".16" stop-color="#de0010"/><stop offset=".39" stop-color="#cb000d"/><stop offset=".66" stop-color="#aa0008"/><stop offset=".97" stop-color="#7d0000"/><stop offset="1" stop-color="#790000"/>
+          </radialGradient>
+        </defs>
+        <g class="problems__symbol-red">
+          <polygon fill="url(#asym-g1)" points=".93 14.82 8.79 .26 18.67 .26 3.8 14.82 6.32 17.93 5.2 17.93 .93 14.82"/>
+          <g clip-path="url(#asym-clip)">
+            <path fill="url(#asym-g6)" d="M17.27,2.75c2.33,2.31,1.5,6.92-1.86,10.3-3.35,3.38-7.96,4.26-10.29,1.95s-1.5-6.92,1.86-10.3c3.35-3.38,7.96-4.26,10.29-1.95Z"/>
+          </g>
+          <polygon fill="url(#asym-g7)" points="2.2 14.54 12.58 1.44 18.67 .26 3.8 14.82 6.32 17.93 6.32 17.93 2.2 14.54"/>
+        </g>
+        <g class="problems__feather problems__feather--lower">
+          <polygon fill="url(#asym-g2)" points="7.57 17.34 23.72 12.12 17.69 11.27 7.22 17.07 7.57 17.34"/>
+          <polygon fill="url(#asym-g5)" points="7.57 17.34 23.72 12.12 17.86 12.48 7.22 17.07 7.57 17.34"/>
+        </g>
+        <g class="problems__feather problems__feather--upper">
+          <polygon fill="url(#asym-g4)" points="22.06 5.99 16.1 5.99 5.41 15.29 5.81 15.64 22.06 5.99"/>
+          <polygon fill="url(#asym-g5b)" points="22.06 5.99 16.48 7.55 5.41 15.29 5.81 15.64 22.06 5.99"/>
+        </g>
+      </svg>
+      <div class="l-section">
+        <p class="c-eyebrow">YOUR QUESTIONS</p>
+        <h2 class="c-heading" id="problems-title">会社をつくったその先に、<br>こんな不安はありませんか？</h2>
+        <p class="c-lead problems__lead">「何から手をつければいい？」を、一緒に整理しましょう。</p>
+        <ol class="problems__list">
+          <li class="c-numcard c-numcard--inline-sp problems__item">
+            <span class="c-numcard__num">01</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">必要な届出、出せている？</h3>
+              <p class="c-numcard__text">会社は設立したけれど、税務手続きがすべて済んでいるか不安。</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp problems__item">
+            <span class="c-numcard__num">02</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">領収書の管理、このままでいい？</h3>
+              <p class="c-numcard__text">領収書や請求書の保存方法を、今のうちに整えておきたい。</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp problems__item">
+            <span class="c-numcard__num">03</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">税金や報酬、いつ決める？</h3>
+              <p class="c-numcard__text">役員報酬や消費税など、何をいつ判断すべきかわからない。</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp problems__item">
+            <span class="c-numcard__num">04</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">手元のお金、見えている？</h3>
+              <p class="c-numcard__text">売上は把握していても、実際に残るお金をつかめていない。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 03 / Benefits  PC 58:4426  SP 58:4653 -->
+    <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+      <div class="l-section">
+        <p class="c-eyebrow">WHAT YOU GET</p>
+        <h2 class="c-heading" id="benefits-title">3分のチェックで、<br>次の一歩を、はっきりと。</h2>
+        <ol class="benefits__list">
+          <li class="c-numcard benefits__item">
+            <span class="c-numcard__num">01</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">見落としに気づく</h3>
+              <p class="c-numcard__text">創業期に確認したい税務・会計の重要項目を、ひと通り整理。</p>
+            </div>
+            <img class="benefits__arrow" src="assets/icons/arrow-right.svg" width="24" height="24" alt="">
+          </li>
+          <li class="c-numcard benefits__item">
+            <span class="c-numcard__num">02</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">優先順位がわかる</h3>
+              <p class="c-numcard__text">今の状況に合わせて、先に確認したい事項を把握。</p>
+            </div>
+            <img class="benefits__arrow" src="assets/icons/arrow-right.svg" width="24" height="24" alt="">
+          </li>
+          <li class="c-numcard benefits__item">
+            <span class="c-numcard__num">03</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">相談の準備ができる</h3>
+              <p class="c-numcard__text">結果をもとに、専門家に聞きたいことを具体化。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 04 / Diagnostic Axes  PC 58:4442  SP 58:4669 -->
+    <section class="areas" id="areas" aria-labelledby="areas-title">
+      <div class="l-section">
+        <p class="c-eyebrow">FOUR AREAS</p>
+        <h2 class="c-heading" id="areas-title">創業期に大切な、4つの領域。</h2>
+        <p class="c-lead areas__lead">専門用語に詳しくなくても大丈夫。「わからない」も選べます。</p>
+        <ol class="areas__list">
+          <li class="c-numcard c-numcard--inline-sp areas__item">
+            <span class="c-numcard__num">01</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">設立・税務手続き</h3>
+              <p class="c-numcard__text">設立時の届出、青色申告、申告スケジュール</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp areas__item">
+            <span class="c-numcard__num">02</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">経理・資金管理</h3>
+              <p class="c-numcard__text">記帳、領収書・請求書、毎月の収支と現預金</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp areas__item">
+            <span class="c-numcard__num">03</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">税金・報酬</h3>
+              <p class="c-numcard__text">役員報酬、源泉徴収、消費税・インボイス</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp areas__item">
+            <span class="c-numcard__num">04</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">成長準備</h3>
+              <p class="c-numcard__text">資金調達の予定、資本政策、相談体制</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 05 / Diagnostic Preview  PC 58:4466  SP 58:4693（2026-10-18 Figma更新：背景画像・人物写真・半透明カード。D-051） -->
+    <section class="preview" id="preview" aria-labelledby="preview-title">
+      <picture class="preview__bg">
+        <source media="(max-width: 767px)" srcset="assets/backgrounds/preview-bg-sp.webp" width="1000" height="1463">
+        <img src="assets/backgrounds/preview-bg-pc.webp" width="2880" height="1440" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div class="l-section preview__split">
+        <div class="preview__copy">
+          <div class="preview__header">
+            <p class="c-eyebrow">YOUR NEXT ACTION</p>
+            <h2 class="c-heading" id="preview-title">点数よりも、<br>「次に何をするか」。</h2>
+          </div>
+          <p class="preview__text">優先して確認したいこと、準備できていること、次の行動をひとつの結果に。</p>
+          <ol class="preview__checklist u-pc">
+            <li><span class="preview__marker">1.</span><span>優先して確認したい事項</span></li>
+            <li><span class="preview__marker">2.</span><span>すでに準備できている事項</span></li>
+            <li><span class="preview__marker">3.</span><span>具体的な確認アクション</span></li>
+          </ol>
+          <p class="preview__checklist-sp u-sp">01　優先して確認したい事項<br>02　すでに準備できている事項<br>03　具体的な確認アクション</p>
+          <p class="preview__note">会社の状況によって不要な項目は対象外に。<br>「該当なし」で評価を下げることはありません。</p>
+          <!-- 人物写真（PC 154:7024）：Figmaはチェックリストを基準に左191・上100、501×510.776（コピー列の上端からは上338）。装飾のため alt 空 -->
+          <img class="preview__people preview__people--pc u-pc" src="assets/images/preview-people.webp" width="1050" height="1006" alt="" loading="lazy" decoding="async">
+        </div>
+        <figure class="preview__card" aria-labelledby="preview-card-title">
+          <p class="preview__card-eyebrow">CHECK RESULT　/　結果の一例</p>
+          <p class="preview__card-title" id="preview-card-title">次に確認したいことが、<br>見えてきました。</p>
+          <ul class="preview__results">
+            <li class="preview__result preview__result--priority">
+              <span class="preview__badge">優先確認</span>
+              <div class="preview__result-body">
+                <p class="preview__result-title">設立関連の届出</p>
+                <p class="preview__result-text">提出済みの書類と提出日を確認し、未確認の届出・期限を整理しましょう。</p>
+              </div>
+            </li>
+            <li class="preview__result preview__result--priority">
+              <span class="preview__badge">優先確認</span>
+              <div class="preview__result-body">
+                <p class="preview__result-title">消費税・インボイス</p>
+                <p class="preview__result-text">取引先や今後の事業予定を整理し、自社に必要な対応を確認しましょう。</p>
+              </div>
+            </li>
+            <li class="preview__result preview__result--ready">
+              <span class="preview__badge">準備できている</span>
+              <div class="preview__result-body">
+                <p class="preview__result-title">経理・資金管理</p>
+                <p class="preview__result-text">領収書・請求書の保存方法<br>毎月の収支・手元資金の把握</p>
+              </div>
+            </li>
+          </ul>
+          <figcaption class="preview__card-note">点数ではなく、次の行動へ。</figcaption>
+        </figure>
+        <!-- 人物写真（SP 154:7036）：結果カードの12px下、左11・341×347、セクション下端まで -->
+        <img class="preview__people preview__people--sp u-sp" src="assets/images/preview-people.webp" width="1050" height="1006" alt="" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- 06 / How It Works  PC 58:4493  SP 58:4720 -->
+    <section class="steps" id="how" aria-labelledby="steps-title">
+      <div class="l-section">
+        <p class="c-eyebrow">HOW IT WORKS</p>
+        <h2 class="c-heading" id="steps-title">回答から結果まで、迷わず3ステップ。</h2>
+        <ol class="steps__list">
+          <li class="c-numcard steps__item">
+            <span class="c-numcard__num"><span class="u-sp">STEP </span>01</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">最大12問に回答</h3>
+              <p class="c-numcard__text">1画面1問。今の状況に近い回答を選び、「次へ」で進みます。</p>
+            </div>
+            <img class="steps__arrow" src="assets/icons/arrow-right.svg" width="24" height="24" alt="">
+          </li>
+          <li class="c-numcard steps__item">
+            <span class="c-numcard__num"><span class="u-sp">STEP </span>02</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">その場で結果を確認</h3>
+              <p class="c-numcard__text">名前やメールアドレスの入力なしで、確認事項を読めます。</p>
+            </div>
+            <img class="steps__arrow" src="assets/icons/arrow-right.svg" width="24" height="24" alt="">
+          </li>
+          <li class="c-numcard steps__item">
+            <span class="c-numcard__num"><span class="u-sp">STEP </span>03</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">必要なら、税理士へ相談</h3>
+              <p class="c-numcard__text">希望する方だけ、結果のメール受取や30分無料相談へ。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 07 / Why Ascend  PC 58:4512  SP 58:4739 -->
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="l-section why__inner">
+        <p class="c-eyebrow"><span class="u-pc">06 / WHY ASCEND PARTNERS</span><span class="u-sp why__eyebrow-sp"> WHY ASCEND PARTNERS</span></p>
+        <h2 class="c-heading why__title" id="why-title">創業期の税務から、<br>その先の成長まで。</h2>
+        <p class="c-lead why__lead">日々の経理から資金調達・資本政策まで。事業の状況に合わせて、経営者の意思決定を支えます。</p>
+        <ol class="why__pillars">
+          <li class="c-numcard c-numcard--inline-sp why__pillar">
+            <span class="c-numcard__num">01</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">税務・会計</h3>
+              <p class="c-numcard__text">届出・申告、月次管理の土台づくり</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp why__pillar">
+            <span class="c-numcard__num">02</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">経理業務</h3>
+              <p class="c-numcard__text">日々のお金の流れを見える状態に</p>
+            </div>
+          </li>
+          <li class="c-numcard c-numcard--inline-sp why__pillar">
+            <span class="c-numcard__num">03</span>
+            <div class="c-numcard__body">
+              <h3 class="c-numcard__title">成長支援</h3>
+              <p class="c-numcard__text">資金調達・資本政策・SOの相談</p>
+            </div>
+          </li>
+        </ol>
+        <hr class="why__divider">
+        <div class="why__profile">
+          <figure class="why__photo">
+            <img src="assets/images/why-profile.webp" width="1400" height="537" alt="アセンドパートナーズ会計事務所 代表 鶴田高志の写真" loading="lazy" decoding="async">
+            <figcaption class="why__name">
+              <span class="why__name-office">アセンドパートナーズ会計事務所</span><span class="why__name-person u-pc">代表  鶴田高志</span><span class="why__name-person u-sp">代表 鶴田高志</span>
+            </figcaption>
+          </figure>
+          <div class="why__message">
+            <p class="why__message-label">代表者プロフィール</p>
+            <h3 class="why__message-title"><span class="u-pc">最も身近で最も頼りになる</span><span class="u-sp">最も身近で最も頼りなる</span><br>経営パートナーに</h3>
+            <p class="why__message-text">税理士は、中小企業の経営者にとって最も身近で最も信頼できる経営パートナーになり得る存在です。決算書や申告書を作成するだけの単なる事務代行屋ではありません。経営者とのコミュニケーションを大切にして、経営の3大要素である「お金」に関する悩みに寄り添い、乗り越えていけるよう全力を尽くしてまいります。そして、クライアントと共に成長していきたいと願っています。</p>
+            <a class="why__message-link" href="https://ascend-tax.jp/about/" target="_blank" rel="noopener">事務所・代表プロフィールを見る ↗<span class="u-visually-hidden">（新しいタブで開きます）</span></a>
+          </div>
+        </div>
+        <div class="why__brand">
+          <img class="why__brand-image" src="assets/images/why-brand.webp" width="1120" height="618" alt="ともに羽ばたく スタートアップの良きパートナーとして、共に成長していく" loading="lazy" decoding="async">
+          <div class="why__brand-message">
+            <p class="why__brand-title">創業の一歩から、<br>頼れるパートナーとして。</p>
+            <p class="why__brand-text">税務・会計の不安を整理し、事業の成長に向き合える環境を、ともに整えていきます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 / CTA  PC 58:4530  SP 58:4757 -->
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="cta__bg" aria-hidden="true">
+        <img src="assets/backgrounds/cta-texture.webp" width="2880" height="2016" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="l-section cta__inner">
+        <p class="c-eyebrow">START HERE</p>
+        <div class="cta__row">
+          <div class="cta__message">
+            <h2 class="cta__title" id="cta-title">事業に集中するために、<br>まずは、今の状況を知ることから。</h2>
+            <p class="cta__sub">無料・約3分・最大12問。登録なしで結果を確認できます。</p>
+          </div>
+          <a class="c-cta c-cta--inverse cta__start" href="diagnosis/" data-link-id="LINK-001">
+            <span class="c-cta__label">無料診断を始める</span>
+            <span class="c-cta__product c-cta__product--crop"><img src="assets/logos/taxcheck-crop.webp" width="540" height="182" alt="STARTUP TAX CHECK"></span>
+            <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-white.svg" width="16" height="16" alt=""></span>
+          </a>
+        </div>
+        <hr class="cta__divider">
+        <h3 class="cta__consult-title">すでに相談したいことがある方へ</h3>
+        <p class="cta__consult-text">診断を受けずに、税理士との30分無料相談をご希望いただけます。</p>
+        <!-- LINK-005：30分無料相談フォーム（diagnosis/#consult）。Figmaプロトタイプの遷移先 64:5820 に対応 -->
+        <a class="c-cta c-cta--secondary cta__consult" href="diagnosis/#consult" data-link-id="LINK-005">
+          <span class="c-cta__label">30分無料相談を希望する</span>
+          <span class="c-cta__capsule" aria-hidden="true"><img src="assets/icons/arrow-capsule-white.svg" width="16" height="16" alt=""></span>
+        </a>
+        <!-- 人物写真（2026-10-18 ご依頼。PCは右下に重ね、SPはボタンの下に配置。D-063）。装飾のため alt 空 -->
+        <img class="cta__people" src="assets/images/cta-people.webp" width="1146" height="625" alt="" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- 09 / FAQ  PC 58:4540  SP 58:4767 -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="l-section">
+        <p class="c-eyebrow">FAQ</p>
+        <h2 class="c-heading" id="faq-title">よくあるご質問</h2>
+        <!-- 開閉式のFAQ（2026-10-18 ご依頼。D-048）。回答は各 faq__answer-inner の中に <p>…</p> で入れる。
+             回答が空の項目は自動で開閉不可になり（scripts/faq.js）、回答を入れるとそのまま開閉できる。
+             最初から開いておく項目は faq__item に is-open、ボタンに aria-expanded="true" を付ける（FigmaではQ1が開） -->
+        <div class="faq__list" data-faq>
+          <div class="faq__item is-open">
+            <h3 class="faq__heading">
+              <button class="faq__button" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-q-1">
+                <span class="faq__question">Q　診断は無料ですか？</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-q-1">
+              <div class="faq__answer-inner">
+                <p>はい。最大12問のセルフチェックと、その場での結果確認は無料です。</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__button" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-q-2">
+                <span class="faq__question">Q 会社設立前でも利用できますか？</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-q-2">
+              <div class="faq__answer-inner">
+                <!-- ダミー（2026-10-18 ご依頼で仮の回答を表示。正式な回答文に差し替える：Q2。B-002） -->
+                <p>ダミーテキストです。ここに回答文が入ります。正式な回答が決まり次第、この文章を差し替えてください。</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__button" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-q-3">
+                <span class="faq__question">Q メールアドレスの登録は必要ですか？</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-q-3">
+              <div class="faq__answer-inner">
+                <!-- ダミー（2026-10-18 ご依頼で仮の回答を表示。正式な回答文に差し替える：Q3。B-002） -->
+                <p>ダミーテキストです。ここに回答文が入ります。正式な回答が決まり次第、この文章を差し替えてください。</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__button" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-q-4">
+                <span class="faq__question">Q 答えがわからない項目があったら？</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-q-4">
+              <div class="faq__answer-inner">
+                <!-- ダミー（2026-10-18 ご依頼で仮の回答を表示。正式な回答文に差し替える：Q4。B-002） -->
+                <p>ダミーテキストです。ここに回答文が入ります。正式な回答が決まり次第、この文章を差し替えてください。</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__button" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-q-5">
+                <span class="faq__question">Q 診断で税務上の問題を確定できますか？</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-q-5">
+              <div class="faq__answer-inner">
+                <!-- ダミー（2026-10-18 ご依頼で仮の回答を表示。正式な回答文に差し替える：Q5。B-002） -->
+                <p>ダミーテキストです。ここに回答文が入ります。正式な回答が決まり次第、この文章を差し替えてください。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer  PC 58:4563  SP 58:4790 -->
+  <footer class="site-footer">
+    <div class="site-footer__bg" aria-hidden="true">
+      <img src="assets/backgrounds/footer-texture.webp" width="2880" height="1440" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="site-footer__inner">
+      <div class="site-footer__top">
+        <p class="site-footer__logo"><img src="assets/logos/logo-reverse.svg" width="320" height="35" alt="アセンドパートナーズ会計事務所 ASCEND PARTNERS ACCOUNTING FIRM" loading="lazy"></p>
+        <p class="site-footer__tagline">創業期の税務・会計から、事業の成長まで。</p>
+      </div>
+      <div class="site-footer__bottom">
+        <ul class="site-footer__links">
+          <li><a href="https://ascend-tax.jp/" target="_blank" rel="noopener">運営事務所 ↗<span class="u-visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://ascend-tax.jp/privacypolicy/" target="_blank" rel="noopener">プライバシーポリシー ↗<span class="u-visually-hidden">（新しいタブで開きます）</span></a></li>
+        </ul>
+        <p class="site-footer__copyright"><small>© ASCEND PARTNERS ACCOUNTING FIRM.</small></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

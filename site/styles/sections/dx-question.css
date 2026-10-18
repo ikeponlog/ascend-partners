@@ -1,0 +1,179 @@
+@layer sections {
+  /* 設問画面 PC 64:3244 ほか / SP 64:382 ほか、回答部品 STC / Answer 58:4289 */
+  .dx-step {
+    width: 100%;
+    color: var(--stc-brand);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .dx-progress {
+    display: flex;
+    gap: var(--space-8);
+    width: 100%;
+  }
+
+  .dx-progress span {
+    flex: 1 1 0;
+    height: 4px;
+    background: var(--stc-border);
+  }
+
+  .dx-progress .is-done {
+    background: var(--stc-brand);
+  }
+
+  .dx-category,
+  .dx-help,
+  .dx-note {
+    width: 100%;
+    color: var(--stc-muted);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .dx-qid {
+    width: 100%;
+    color: var(--stc-muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .dx-answers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  /* 未回答エラー（64:5125 / 64:2124）では回答がカードの直下に並び、間隔はカードのgap（PC 20 / SP 24） */
+  [data-error] .dx-answers {
+    gap: var(--dx-gap);
+  }
+
+  /* 回答：高さ64・padding 16・枠1px #767d84・角丸8。選択時 tint＋2px brand、フォーカス時3px #005fcc（いずれも部品の状態） */
+  .dx-answer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    height: 64px;
+    padding: var(--space-16);
+    border: 1px solid var(--stc-control);
+    border-radius: var(--radius-8);
+    background: var(--stc-paper);
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+  }
+
+  .dx-answer__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Figmaの選択記号（○ / ●）をそのまま表示 */
+  .dx-answer__mark {
+    flex: none;
+    width: 24px;
+    color: var(--stc-muted);
+  }
+
+  .dx-answer__mark::before {
+    content: '○';
+  }
+
+  .dx-answer__label {
+    flex: 0 1 272px;
+  }
+
+  .dx-answer:has(.dx-answer__input:checked) {
+    border: 2px solid var(--stc-brand);
+    background: var(--stc-tint);
+  }
+
+  .dx-answer:has(.dx-answer__input:checked) .dx-answer__mark {
+    color: var(--stc-brand);
+  }
+
+  .dx-answer:has(.dx-answer__input:checked) .dx-answer__mark::before {
+    content: '●';
+  }
+
+  .dx-answer:has(.dx-answer__input:focus-visible) {
+    border: 3px solid var(--stc-focus);
+  }
+
+  /* 2026-10-18 ご依頼：どれを選んでいるか分かりやすく（D-059）
+     ・ホバー：枠をブランド色に（内側の影で太さを足し、寸法は変えない）、淡い背景、○をブランド色、右へ少し移動
+     ・選択中：Figmaの状態（tint＋2px brand＋●）に、ラベルのブランド色と影を加えて、ホバーと区別できるようにする */
+  .dx-answer {
+    transition:
+      border-color var(--dur-fast),
+      background-color var(--dur-fast),
+      box-shadow var(--dur-base) var(--ease-out),
+      translate var(--dur-base) var(--ease-out);
+  }
+
+  .dx-answer__mark,
+  .dx-answer__label {
+    transition: color var(--dur-fast);
+  }
+
+  .dx-answer:has(.dx-answer__input:checked) {
+    box-shadow: 0 6px 18px rgb(175 23 23 / 0.14);
+  }
+
+  .dx-answer:has(.dx-answer__input:checked) .dx-answer__label {
+    color: var(--stc-brand);
+  }
+
+  @media (hover: hover) {
+    .dx-answer:hover:not(:has(.dx-answer__input:checked)) {
+      border-color: var(--stc-brand);
+      background: color-mix(in srgb, var(--stc-tint) 55%, var(--stc-paper));
+      box-shadow: inset 0 0 0 1px var(--stc-brand);
+      translate: 4px 0;
+    }
+
+    .dx-answer:hover .dx-answer__mark {
+      color: var(--stc-brand);
+    }
+  }
+
+  /* 戻る（140×56、ラベルのみ）＋ 次へ */
+  .dx-actions {
+    display: flex;
+    gap: var(--space-12);
+    width: 100%;
+  }
+
+  .dx-back {
+    --cta-width: 140px;
+    padding-inline: var(--space-16);
+  }
+
+  .dx-actions .dx-btn {
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    /* SP：STEP表記は英数字が EB Garamond Bold 20 */
+    .dx-step {
+      font-family: var(--font-label);
+      font-size: 20px;
+    }
+
+    .dx-back {
+      --cta-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 23.72 17.93">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#_名称未設定グラデーション_6);
+      }
+
+      .cls-3 {
+        fill: url(#_名称未設定グラデーション_5);
+      }
+
+      .cls-4 {
+        fill: url(#_名称未設定グラデーション_4);
+      }
+
+      .cls-5 {
+        fill: url(#_名称未設定グラデーション_2);
+      }
+
+      .cls-6 {
+        fill: url(#_名称未設定グラデーション_7);
+      }
+
+      .cls-7 {
+        fill: url(#_名称未設定グラデーション_5-2);
+      }
+
+      .cls-8 {
+        fill: url(#_名称未設定グラデーション);
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <radialGradient id="_名称未設定グラデーション" data-name="名称未設定グラデーション" cx="9.8" cy="7.17" fx="9.8" fy="7.17" r="8.85" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe246"/>
+      <stop offset=".32" stop-color="#ea4d07"/>
+      <stop offset=".79" stop-color="#c9000c"/>
+      <stop offset="1" stop-color="#a80001"/>
+    </radialGradient>
+    <radialGradient id="_名称未設定グラデーション_2" data-name="名称未設定グラデーション 2" cx="15.47" cy="1.96" fx="15.47" fy="1.96" r="6.22" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".32" stop-color="#c1c1c1"/>
+      <stop offset=".79" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#343434"/>
+    </radialGradient>
+    <linearGradient id="_名称未設定グラデーション_5" data-name="名称未設定グラデーション 5" x1="21.42" y1="4.52" x2="5.64" y2="-3.02" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#3d3d3d"/>
+    </linearGradient>
+    <radialGradient id="_名称未設定グラデーション_4" data-name="名称未設定グラデーション 4" cx="13.73" cy="5.45" fx="13.73" fy="5.45" r="6.8" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".32" stop-color="#c1c1c1"/>
+      <stop offset=".7" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#343434"/>
+    </radialGradient>
+    <linearGradient id="_名称未設定グラデーション_5-2" data-name="名称未設定グラデーション 5" x1="17.41" y1="8.3" x2="9.5" y2="2.55" xlink:href="#_名称未設定グラデーション_5"/>
+    <clipPath id="clippath">
+      <polygon class="cls-1" points="3.67 13.12 17.87 .02 8.54 0 0 11.61 3.67 13.12"/>
+    </clipPath>
+    <radialGradient id="_名称未設定グラデーション_6" data-name="名称未設定グラデーション 6" cx="-35.41" cy="-98.86" fx="-35.41" fy="-98.86" r="6.31" gradientTransform="translate(36.57 -97.36) rotate(-2.89) scale(1 -1) skewX(.47)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="_名称未設定グラデーション_7" data-name="名称未設定グラデーション 7" cx="10.44" cy="7.17" fx="10.44" fy="7.17" r="8.54" gradientTransform="translate(0 16.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e60012"/>
+      <stop offset=".16" stop-color="#de0010"/>
+      <stop offset=".39" stop-color="#cb000d"/>
+      <stop offset=".66" stop-color="#aa0008"/>
+      <stop offset=".97" stop-color="#7d0000"/>
+      <stop offset="1" stop-color="#790000"/>
+    </radialGradient>
+  </defs>
+  <g id="_レイヤー_2-2" data-name=" レイヤー 2">
+    <g>
+      <polygon class="cls-8" points=".93 14.82 8.79 .26 18.67 .26 3.8 14.82 6.32 17.93 5.2 17.93 .93 14.82"/>
+      <polygon class="cls-5" points="7.57 17.34 23.72 12.12 17.69 11.27 7.22 17.07 7.57 17.34"/>
+      <polygon class="cls-3" points="7.57 17.34 23.72 12.12 17.86 12.48 7.22 17.07 7.57 17.34"/>
+      <polygon class="cls-4" points="22.06 5.99 16.1 5.99 5.41 15.29 5.81 15.64 22.06 5.99"/>
+      <polygon class="cls-7" points="22.06 5.99 16.48 7.55 5.41 15.29 5.81 15.64 22.06 5.99"/>
+      <g class="cls-9">
+        <path class="cls-2" d="M17.27,2.75c2.33,2.31,1.5,6.92-1.86,10.3-3.35,3.38-7.96,4.26-10.29,1.95s-1.5-6.92,1.86-10.3c3.35-3.38,7.96-4.26,10.29-1.95Z"/>
+      </g>
+      <polygon class="cls-6" points="2.2 14.54 12.58 1.44 18.67 .26 3.8 14.82 6.32 17.93 6.32 17.93 2.2 14.54"/>
+    </g>
+  </g>
+</svg>

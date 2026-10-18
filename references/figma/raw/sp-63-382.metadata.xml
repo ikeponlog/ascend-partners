@@ -1,0 +1,919 @@
+<canvas id="63:382" name="v3.0｜PC診断フロー" x="0" y="0" width="0" height="0">
+  <frame id="64:3244" name="01 / Q01 — PC 1440 / v3" x="200" y="400" width="1440" height="1024">
+    <frame id="64:3245" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3246" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="91:6113" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="91:6114" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="91:6115" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="91:6116" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3249" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3250" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:3251" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:3252" name="STEP 01 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3253" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3254" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3255" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3256" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3257" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3258" name="会社設立・基本手続き" x="33" y="97" width="736" height="24" />
+        <text id="64:3259" name="Q01" x="33" y="141" width="736" height="20" />
+        <text id="64:3260" name="現在の会社の状況を教えてください。" x="33" y="181" width="736" height="36" />
+        <text id="64:3261" name="今の状況に最も近いものを1つ選んでください。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3262" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:3263" name="回答 / 設立準備中" x="0" y="0" width="736" height="64" />
+          <instance id="64:3264" name="回答 / 設立3か月以内" x="0" y="76" width="736" height="64" />
+          <instance id="64:3265" name="回答 / 設立3〜12か月" x="0" y="152" width="736" height="64" />
+          <instance id="64:3266" name="回答 / 設立1年以上" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:3267" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:3268" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:3269" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3270" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3271" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="91:6112" name="Header" x="386" y="131" width="390" height="96">
+    <frame id="137:2056" name="Brand" x="0" y="-8" width="342" height="68">
+      <rounded-rectangle id="137:2057" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+      <instance id="137:2058" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+      <text id="137:2059" name="Produce by" x="55" y="47" width="86" height="20" />
+    </frame>
+  </frame>
+  <frame id="64:3379" name="02 / Q02 — PC 1440 / v3" x="1760" y="400" width="1440" height="1024">
+    <frame id="64:3380" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3381" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1956" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1957" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1958" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1959" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3384" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3385" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:3386" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:3387" name="STEP 01 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3388" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3389" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3390" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3391" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3392" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3393" name="会社設立・基本手続き" x="33" y="97" width="736" height="24" />
+        <text id="64:3394" name="Q02" x="33" y="141" width="736" height="20" />
+        <text id="64:3395" name="必要な税務届出・申請の提出状況や期限を確認していますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:3396" name="法人設立届出や青色申告などが対象です。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3397" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:3398" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:3399" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:3400" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:3401" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:3402" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:3403" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:3404" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3405" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3406" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:3514" name="03 / Q03 — PC 1440 / v3" x="3320" y="400" width="1440" height="1024">
+    <frame id="64:3515" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3516" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1960" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1961" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1962" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1963" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3519" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3520" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:3521" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:3522" name="STEP 01 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3523" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3524" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3525" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3526" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3527" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3528" name="会社設立・基本手続き" x="33" y="97" width="736" height="24" />
+        <text id="64:3529" name="Q03" x="33" y="141" width="736" height="20" />
+        <text id="64:3530" name="決算月や税務申告の時期、担当者は決まっていますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:3531" name="すべてが決まっていなくても、近い回答を選べます。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3532" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:3533" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:3534" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:3535" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:3536" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:3537" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:3538" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:3539" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3540" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3541" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:3649" name="04 / Q04 — PC 1440 / v3" x="4880" y="400" width="1440" height="1024">
+    <frame id="64:3650" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3651" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1964" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1965" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1966" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1967" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3654" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3655" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:3656" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:3657" name="STEP 02 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3658" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3659" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3660" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3661" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3662" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3663" name="日々のお金の管理" x="33" y="97" width="736" height="24" />
+        <text id="64:3664" name="Q04" x="33" y="141" width="736" height="20" />
+        <text id="64:3665" name="会社のお金と個人のお金を分けて管理できていますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:3666" name="口座や支出の記録など、日々の管理方法を確認します。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3667" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:3668" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:3669" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:3670" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:3671" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:3672" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:3673" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:3674" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3675" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3676" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:3784" name="05 / Q05 — PC 1440 / v3" x="200" y="2050" width="1440" height="1034">
+    <frame id="64:3785" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3786" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1968" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1969" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1970" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1971" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3789" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3790" name="Desktop content" x="0" y="108" width="1440" height="926">
+      <frame id="64:3791" name="Content card / PC" x="320" y="40" width="800" height="846">
+        <text id="64:3792" name="STEP 02 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3793" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3794" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3795" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3796" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3797" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3798" name="日々のお金の管理" x="33" y="97" width="736" height="24" />
+        <text id="64:3799" name="Q05" x="33" y="141" width="736" height="20" />
+        <text id="64:3800" name="領収書や請求書を、決まった方法で保存できていますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:3801" name="取引がまだない場合のみ「該当なし」を選べます。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3802" name="Answer group" x="33" y="281" width="736" height="368">
+          <instance id="64:3803" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:3804" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:3805" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:3806" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+          <instance id="64:3807" name="回答 / 該当なし：まだ取引がない" x="0" y="304" width="736" height="64" />
+        </frame>
+        <text id="64:3808" name="選択しても自動で進みません。" x="33" y="669" width="736" height="24" />
+        <frame id="64:3809" name="Actions" x="33" y="713" width="736" height="56">
+          <instance id="64:3810" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3811" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3812" name="診断を中断する" x="33" y="789" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:3924" name="06 / Q06 — PC 1440 / v3" x="1760" y="2050" width="1440" height="1024">
+    <frame id="64:3925" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:3926" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1972" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1973" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1974" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1975" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:3929" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:3930" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:3931" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:3932" name="STEP 02 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:3933" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:3934" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3935" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3936" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:3937" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:3938" name="日々のお金の管理" x="33" y="97" width="736" height="24" />
+        <text id="64:3939" name="Q06" x="33" y="141" width="736" height="20" />
+        <text id="64:3940" name="毎月の売上・費用・手元資金を把握する仕組みがありますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:3941" name="会計ソフトや管理表など、確認できる仕組みが対象です。" x="33" y="237" width="736" height="24" />
+        <frame id="64:3942" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:3943" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:3944" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:3945" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:3946" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:3947" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:3948" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:3949" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:3950" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:3951" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4059" name="07 / Q07 — PC 1440 / v3" x="3320" y="2050" width="1440" height="1034">
+    <frame id="64:4060" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4061" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1976" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1977" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1978" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1979" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4064" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4065" name="Desktop content" x="0" y="108" width="1440" height="926">
+      <frame id="64:4066" name="Content card / PC" x="320" y="40" width="800" height="846">
+        <text id="64:4067" name="STEP 03 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4068" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4069" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4070" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4071" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4072" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4073" name="税金・資金調達" x="33" y="97" width="736" height="24" />
+        <text id="64:4074" name="Q07" x="33" y="141" width="736" height="20" />
+        <text id="64:4075" name="役員報酬や給与の支払いに必要な税務手続きを確認していますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:4076" name="支払いの予定がない場合のみ「該当なし」を選べます。" x="33" y="237" width="736" height="24" />
+        <frame id="64:4077" name="Answer group" x="33" y="281" width="736" height="368">
+          <instance id="64:4078" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4079" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4080" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4081" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+          <instance id="64:4082" name="回答 / 該当なし：支払い予定がない" x="0" y="304" width="736" height="64" />
+        </frame>
+        <text id="64:4083" name="選択しても自動で進みません。" x="33" y="669" width="736" height="24" />
+        <frame id="64:4084" name="Actions" x="33" y="713" width="736" height="56">
+          <instance id="64:4085" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4086" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4087" name="診断を中断する" x="33" y="789" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4199" name="08 / Q08 — PC 1440 / v3" x="4880" y="2050" width="1440" height="1024">
+    <frame id="64:4200" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4201" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1980" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1981" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1982" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1983" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4204" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4205" name="Desktop content" x="0" y="108" width="1440" height="886">
+      <frame id="64:4206" name="Content card / PC" x="320" y="40" width="800" height="806">
+        <text id="64:4207" name="STEP 03 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4208" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4209" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4210" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4211" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4212" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4213" name="税金・資金調達" x="33" y="97" width="736" height="24" />
+        <text id="64:4214" name="Q08" x="33" y="141" width="736" height="20" />
+        <text id="64:4215" name="消費税やインボイスについて、自社に必要な対応を確認していますか？" x="33" y="181" width="736" height="72" />
+        <text id="64:4216" name="登録の有無ではなく、必要性を確認できているかを伺います。" x="33" y="273" width="736" height="24" />
+        <frame id="64:4217" name="Answer group" x="33" y="317" width="736" height="292">
+          <instance id="64:4218" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4219" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4220" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4221" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:4222" name="選択しても自動で進みません。" x="33" y="629" width="736" height="24" />
+        <frame id="64:4223" name="Actions" x="33" y="673" width="736" height="56">
+          <instance id="64:4224" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4225" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4226" name="診断を中断する" x="33" y="749" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4334" name="09 / Q09 — PC 1440 / v3" x="200" y="3700" width="1440" height="1034">
+    <frame id="64:4335" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4336" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1984" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1985" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1986" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1987" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4339" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4340" name="Desktop content" x="0" y="108" width="1440" height="926">
+      <frame id="64:4341" name="Content card / PC" x="320" y="40" width="800" height="846">
+        <text id="64:4342" name="STEP 03 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4343" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4344" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4345" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4346" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4347" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4348" name="税金・資金調達" x="33" y="97" width="736" height="24" />
+        <text id="64:4349" name="Q09" x="33" y="141" width="736" height="20" />
+        <text id="64:4350" name="今後、外部からの資金調達を検討していますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:4351" name="回答に応じて、この後の質問が変わります。" x="33" y="237" width="736" height="24" />
+        <frame id="64:4352" name="Answer group" x="33" y="281" width="736" height="368">
+          <instance id="64:4353" name="回答 / 融資を検討" x="0" y="0" width="736" height="64" />
+          <instance id="64:4354" name="回答 / 出資を検討" x="0" y="76" width="736" height="64" />
+          <instance id="64:4355" name="回答 / 融資と出資の両方" x="0" y="152" width="736" height="64" />
+          <instance id="64:4356" name="回答 / 予定なし" x="0" y="228" width="736" height="64" />
+          <instance id="64:4357" name="回答 / 未定" x="0" y="304" width="736" height="64" />
+        </frame>
+        <text id="64:4358" name="選択しても自動で進みません。" x="33" y="669" width="736" height="24" />
+        <frame id="64:4359" name="Actions" x="33" y="713" width="736" height="56">
+          <instance id="64:4360" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4361" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4362" name="診断を中断する" x="33" y="789" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4474" name="10 / Q10 — PC 1440 / v3" x="1760" y="3700" width="1440" height="1024">
+    <frame id="64:4475" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4476" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1988" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1989" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1990" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1991" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4479" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4480" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:4481" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:4482" name="STEP 04 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4483" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4484" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4485" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4486" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4487" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4488" name="成長に向けた準備" x="33" y="97" width="736" height="24" />
+        <text id="64:4489" name="Q10" x="33" y="141" width="736" height="20" />
+        <text id="64:4490" name="資金調達に向けて、必要な資金額と使い道を整理していますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:4491" name="まだ金額が決まっていなくても、近い回答を選べます。" x="33" y="237" width="736" height="24" />
+        <frame id="64:4492" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:4493" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4494" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4495" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4496" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:4497" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:4498" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:4499" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4500" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4501" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4609" name="11 / Q11 — PC 1440 / v3" x="3320" y="3700" width="1440" height="1070">
+    <frame id="64:4610" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4611" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1992" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1993" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1994" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1995" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4614" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4615" name="Desktop content" x="0" y="108" width="1440" height="962">
+      <frame id="64:4616" name="Content card / PC" x="320" y="40" width="800" height="882">
+        <text id="64:4617" name="STEP 04 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4618" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4619" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4620" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4621" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4622" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4623" name="成長に向けた準備" x="33" y="97" width="736" height="24" />
+        <text id="64:4624" name="Q11" x="33" y="141" width="736" height="20" />
+        <text id="64:4625" name="出資を受ける場合、株主構成や持分比率への影響を確認していますか？" x="33" y="181" width="736" height="72" />
+        <text id="64:4626" name="出資や株主構成の変更が関係する場合に確認します。" x="33" y="273" width="736" height="24" />
+        <frame id="64:4627" name="Answer group" x="33" y="317" width="736" height="368">
+          <instance id="64:4628" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4629" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4630" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4631" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+          <instance id="64:4632" name="回答 / 該当なし：出資・変更予定なし" x="0" y="304" width="736" height="64" />
+        </frame>
+        <text id="64:4633" name="選択しても自動で進みません。" x="33" y="705" width="736" height="24" />
+        <frame id="64:4634" name="Actions" x="33" y="749" width="736" height="56">
+          <instance id="64:4635" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4636" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4637" name="診断を中断する" x="33" y="825" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4749" name="12 / Q12 — PC 1440 / v3" x="4880" y="3700" width="1440" height="1024">
+    <frame id="64:4750" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4751" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:1996" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:1997" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:1998" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:1999" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4754" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4755" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:4756" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:4757" name="STEP 04 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4758" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4759" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4760" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4761" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4762" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4763" name="成長に向けた準備" x="33" y="97" width="736" height="24" />
+        <text id="64:4764" name="Q12" x="33" y="141" width="736" height="20" />
+        <text id="64:4765" name="経理や税務の重要な判断を相談できる相手は決まっていますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:4766" name="相談相手がいないことだけで、危険とは判定しません。" x="33" y="237" width="736" height="24" />
+        <frame id="64:4767" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:4768" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4769" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4770" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4771" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:4772" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:4773" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:4774" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4775" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4776" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:4884" name="13 / Q02・設立前 — PC 1440 / v3" x="200" y="5350" width="1440" height="1024">
+    <frame id="64:4885" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:4886" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2000" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2001" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2002" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2003" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:4889" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:4890" name="Desktop content" x="0" y="108" width="1440" height="850">
+      <frame id="64:4891" name="Content card / PC" x="320" y="40" width="800" height="770">
+        <text id="64:4892" name="STEP 01 / 04　・　最大12問" x="33" y="33" width="736" height="20" />
+        <frame id="64:4893" name="Progress" x="33" y="73" width="736" height="4">
+          <rounded-rectangle id="64:4894" name="Rectangle" x="0" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4895" name="Rectangle" x="186" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4896" name="Rectangle" x="372" y="0" width="178" height="4" />
+          <rounded-rectangle id="64:4897" name="Rectangle" x="558" y="0" width="178" height="4" />
+        </frame>
+        <text id="64:4898" name="会社設立・基本手続き" x="33" y="97" width="736" height="24" />
+        <text id="64:4899" name="Q02" x="33" y="141" width="736" height="20" />
+        <text id="64:4900" name="設立後に必要な税務届出の提出予定と期限を確認していますか？" x="33" y="181" width="736" height="36" />
+        <text id="64:4901" name="法人設立届出や青色申告などが対象です。" x="33" y="237" width="736" height="24" />
+        <frame id="64:4902" name="Answer group" x="33" y="281" width="736" height="292">
+          <instance id="64:4903" name="回答 / できている" x="0" y="0" width="736" height="64" />
+          <instance id="64:4904" name="回答 / 一部できている" x="0" y="76" width="736" height="64" />
+          <instance id="64:4905" name="回答 / まだできていない" x="0" y="152" width="736" height="64" />
+          <instance id="64:4906" name="回答 / わからない" x="0" y="228" width="736" height="64" />
+        </frame>
+        <text id="64:4907" name="選択しても自動で進みません。" x="33" y="593" width="736" height="24" />
+        <frame id="64:4908" name="Actions" x="33" y="637" width="736" height="56">
+          <instance id="64:4909" name="Back" x="0" y="0" width="140" height="56" />
+          <instance id="64:4910" name="Next" x="152" y="0" width="584" height="56" />
+        </frame>
+        <text id="64:4911" name="診断を中断する" x="33" y="713" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5019" name="14 / 調達予定なし・対象外 — PC 1440 / v3" x="1760" y="5350" width="1440" height="1024">
+    <frame id="64:5020" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5021" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2004" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2005" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2006" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2007" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5024" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5025" name="Desktop content" x="0" y="108" width="1440" height="514">
+      <frame id="64:5026" name="Content card / PC" x="320" y="40" width="800" height="434">
+        <frame id="64:5027" name="Label / 回答に合わせて質問を調整" x="33" y="33" width="300" height="40">
+          <text id="64:5028" name="回答に合わせて質問を調整" x="8" y="8" width="284" height="24" />
+        </frame>
+        <text id="64:5029" name="資金調達の質問は、今回はスキップします。" x="33" y="93" width="736" height="36" />
+        <text id="64:5030" name="「予定なし」を選んだため、必要資金額と出資に関する2問を対象外にしました。評価は下がりません。" x="33" y="149" width="736" height="56" />
+        <text id="64:5031" name="次は、相談体制について伺います。全10問で完了するルートです。" x="33" y="225" width="736" height="24" />
+        <instance id="64:5032" name="CTA" x="33" y="269" width="736" height="56" />
+        <instance id="64:5033" name="CTA" x="33" y="345" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5125" name="15 / 未回答エラー — PC 1440 / v3" x="3320" y="5350" width="1440" height="1024">
+    <frame id="64:5126" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5127" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2008" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2009" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2010" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2011" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5130" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5131" name="Desktop content" x="0" y="108" width="1440" height="742">
+      <frame id="64:5132" name="Content card / PC" x="320" y="40" width="800" height="662">
+        <text id="64:5133" name="Q05 / 日々のお金の管理" x="33" y="33" width="736" height="20" />
+        <text id="64:5134" name="領収書や請求書を、決まった方法で保存できていますか？" x="33" y="73" width="736" height="36" />
+        <frame id="64:5135" name="Error summary" x="33" y="129" width="736" height="88">
+          <text id="64:5136" name="! 回答を1つ選んでください" x="16" y="16" width="704" height="24" />
+          <text id="64:5137" name="迷う場合は「わからない」を選べます。" x="16" y="48" width="704" height="24" />
+        </frame>
+        <instance id="64:5138" name="回答 / できている" x="33" y="237" width="736" height="64" />
+        <instance id="64:5139" name="回答 / 一部できている" x="33" y="321" width="736" height="64" />
+        <instance id="64:5140" name="回答 / まだできていない" x="33" y="405" width="736" height="64" />
+        <instance id="64:5141" name="回答 / わからない" x="33" y="489" width="736" height="64" />
+        <instance id="64:5142" name="CTA" x="33" y="573" width="736" height="56" />
+        <text id="64:5143" name="実装注記：エラー要約にフォーカスを移動。回答グループと説明を読み上げに関連付ける。" x="24" y="744" width="736" height="24" hidden="true" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5241" name="16 / 中断確認 — PC 1440 / v3" x="4880" y="5350" width="1440" height="1024">
+    <frame id="64:5242" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5243" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2012" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2013" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2014" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2015" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5246" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5247" name="Desktop content" x="0" y="108" width="1440" height="382">
+      <frame id="64:5248" name="Content card / PC" x="320" y="40" width="800" height="302">
+        <text id="64:5249" name="診断を中断しますか？" x="33" y="33" width="736" height="36" />
+        <text id="64:5250" name="この画面を閉じると、入力中の回答は失われます。続ける場合は「回答に戻る」を選んでください。" x="33" y="89" width="736" height="28" />
+        <instance id="64:5251" name="CTA" x="33" y="137" width="736" height="56" />
+        <instance id="64:5252" name="CTA" x="33" y="213" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5344" name="17 / 結果A・優先確認 — PC 1440 / v3" x="200" y="7000" width="1440" height="1291">
+    <frame id="64:5345" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5346" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2016" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2017" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2018" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2019" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5349" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5350" name="Desktop content" x="0" y="108" width="1440" height="1183">
+      <frame id="64:5351" name="Content card / PC" x="320" y="40" width="800" height="1103">
+        <text id="64:5352" name="YOUR CHECK RESULT" x="33" y="33" width="736" height="20" />
+        <frame id="64:5353" name="Label / 優先確認あり" x="33" y="73" width="180" height="40">
+          <text id="64:5354" name="優先確認あり" x="8" y="8" width="164" height="24" />
+        </frame>
+        <text id="64:5355" name="今、優先して確認したいことが2つ見つかりました。" x="33" y="133" width="736" height="36" />
+        <text id="64:5356" name="回答をもとに、確認事項を整理しました。個別の税務判断や法令違反の判定ではありません。" x="33" y="189" width="736" height="24" />
+        <frame id="64:5357" name="Priority 01" x="33" y="233" width="736" height="142">
+          <text id="64:5358" name="優先確認 01" x="20" y="20" width="696" height="20" />
+          <text id="64:5359" name="設立関連の届出" x="20" y="52" width="696" height="30" />
+          <text id="64:5360" name="提出済みの書類と提出日を確認し、未確認の届出・期限を整理しましょう。" x="20" y="94" width="696" height="28" />
+        </frame>
+        <frame id="64:5361" name="Priority 02" x="33" y="395" width="736" height="142">
+          <text id="64:5362" name="優先確認 02" x="20" y="20" width="696" height="20" />
+          <text id="64:5363" name="消費税・インボイス" x="20" y="52" width="696" height="30" />
+          <text id="64:5364" name="取引先や今後の事業予定を整理し、自社に必要な対応を確認しましょう。" x="20" y="94" width="696" height="28" />
+        </frame>
+        <frame id="64:5365" name="Ready" x="33" y="557" width="736" height="104">
+          <text id="64:5366" name="✓ 準備できていること" x="20" y="20" width="696" height="24" />
+          <text id="64:5367" name="領収書・請求書の保存方法毎月の収支・手元資金の把握" x="20" y="56" width="696" height="28" />
+        </frame>
+        <text id="64:5368" name="対象外の項目は評価に含めていません。「わからない」は確認したい事項として整理します。" x="33" y="681" width="736" height="24" />
+        <rounded-rectangle id="64:5369" name="Divider" x="33" y="725" width="736" height="1" />
+        <text id="64:5370" name="結果をもとに、税理士と次の一歩を。" x="33" y="746" width="736" height="36" />
+        <text id="64:5371" name="30分無料相談で、気になる項目と確認の進め方を整理できます。" x="33" y="802" width="736" height="28" />
+        <instance id="64:5372" name="Consultation" x="33" y="850" width="736" height="56" />
+        <text id="64:5373" name="30分無料・ご希望の方のみ" x="33" y="926" width="736" height="24" />
+        <instance id="64:5374" name="Email" x="33" y="970" width="736" height="56" />
+        <text id="64:5375" name="回答を見直す" x="33" y="1046" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5467" name="18 / 結果B・準備済み — PC 1440 / v3" x="1760" y="7000" width="1440" height="1101">
+    <frame id="64:5468" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5469" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2020" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2021" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2022" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2023" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5472" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5473" name="Desktop content" x="0" y="108" width="1440" height="993">
+      <frame id="64:5474" name="Content card / PC" x="320" y="40" width="800" height="913">
+        <text id="64:5475" name="YOUR CHECK RESULT" x="33" y="33" width="736" height="20" />
+        <frame id="64:5476" name="Label / 準備の確認" x="33" y="73" width="180" height="40">
+          <text id="64:5477" name="準備の確認" x="8" y="8" width="164" height="24" />
+        </frame>
+        <text id="64:5478" name="創業期の税務・会計の準備は、概ね整っているようです。" x="33" y="133" width="736" height="36" />
+        <text id="64:5479" name="回答をもとに、確認事項を整理しました。個別の税務判断や法令違反の判定ではありません。" x="33" y="189" width="736" height="24" />
+        <frame id="64:5480" name="Next action" x="33" y="233" width="736" height="114">
+          <text id="64:5481" name="次は、経営判断に役立つ管理へ" x="20" y="20" width="696" height="30" />
+          <text id="64:5482" name="月次の収支と資金繰りを、定期的に振り返る仕組みを整えましょう。" x="20" y="66" width="696" height="28" />
+        </frame>
+        <frame id="64:5483" name="Ready" x="33" y="367" width="736" height="104">
+          <text id="64:5484" name="✓ 準備できていること" x="20" y="20" width="696" height="24" />
+          <text id="64:5485" name="領収書・請求書の保存方法毎月の収支・手元資金の把握" x="20" y="56" width="696" height="28" />
+        </frame>
+        <text id="64:5486" name="対象外の項目は評価に含めていません。「わからない」は確認したい事項として整理します。" x="33" y="491" width="736" height="24" />
+        <rounded-rectangle id="64:5487" name="Divider" x="33" y="535" width="736" height="1" />
+        <text id="64:5488" name="結果をもとに、税理士と次の一歩を。" x="33" y="556" width="736" height="36" />
+        <text id="64:5489" name="30分無料相談で、気になる項目と確認の進め方を整理できます。" x="33" y="612" width="736" height="28" />
+        <instance id="64:5490" name="Consultation" x="33" y="660" width="736" height="56" />
+        <text id="64:5491" name="30分無料・ご希望の方のみ" x="33" y="736" width="736" height="24" />
+        <instance id="64:5492" name="Email" x="33" y="780" width="736" height="56" />
+        <text id="64:5493" name="回答を見直す" x="33" y="856" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5585" name="19 / 結果C・設立前 — PC 1440 / v3" x="3320" y="7000" width="1440" height="1101">
+    <frame id="64:5586" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5587" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2024" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2025" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2026" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2027" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5590" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5591" name="Desktop content" x="0" y="108" width="1440" height="993">
+      <frame id="64:5592" name="Content card / PC" x="320" y="40" width="800" height="913">
+        <text id="64:5593" name="YOUR CHECK RESULT" x="33" y="33" width="736" height="20" />
+        <frame id="64:5594" name="Label / 設立準備中" x="33" y="73" width="180" height="40">
+          <text id="64:5595" name="設立準備中" x="8" y="8" width="164" height="24" />
+        </frame>
+        <text id="64:5596" name="会社設立前だからこそ、今から準備できることがあります。" x="33" y="133" width="736" height="36" />
+        <text id="64:5597" name="回答をもとに、確認事項を整理しました。個別の税務判断や法令違反の判定ではありません。" x="33" y="189" width="736" height="24" />
+        <frame id="64:5598" name="Next action" x="33" y="233" width="736" height="114">
+          <text id="64:5599" name="設立前に整理したいこと" x="20" y="20" width="696" height="30" />
+          <text id="64:5600" name="設立予定日、決算月、設立後の届出、経理の進め方をリストにしましょう。" x="20" y="66" width="696" height="28" />
+        </frame>
+        <frame id="64:5601" name="Ready" x="33" y="367" width="736" height="104">
+          <text id="64:5602" name="✓ 準備できていること" x="20" y="20" width="696" height="24" />
+          <text id="64:5603" name="会社のお金を分ける準備" x="20" y="56" width="696" height="28" />
+        </frame>
+        <text id="64:5604" name="対象外の項目は評価に含めていません。「わからない」は確認したい事項として整理します。" x="33" y="491" width="736" height="24" />
+        <rounded-rectangle id="64:5605" name="Divider" x="33" y="535" width="736" height="1" />
+        <text id="64:5606" name="結果をもとに、税理士と次の一歩を。" x="33" y="556" width="736" height="36" />
+        <text id="64:5607" name="30分無料相談で、気になる項目と確認の進め方を整理できます。" x="33" y="612" width="736" height="28" />
+        <instance id="64:5608" name="Consultation" x="33" y="660" width="736" height="56" />
+        <text id="64:5609" name="30分無料・ご希望の方のみ" x="33" y="736" width="736" height="24" />
+        <instance id="64:5610" name="Email" x="33" y="780" width="736" height="56" />
+        <text id="64:5611" name="回答を見直す" x="33" y="856" width="736" height="24" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5703" name="20 / メール受取 — PC 1440 / v3" x="4880" y="7000" width="1440" height="1024">
+    <frame id="64:5704" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5705" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2028" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2029" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2030" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2031" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5708" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5709" name="Desktop content" x="0" y="108" width="1440" height="744">
+      <frame id="64:5710" name="Content card / PC" x="320" y="40" width="800" height="664">
+        <text id="64:5711" name="診断結果のメール受取" x="33" y="33" width="736" height="20" />
+        <text id="64:5712" name="結果をメールで受け取れます。" x="33" y="73" width="736" height="36" />
+        <text id="64:5713" name="診断結果を手元に残したい方へ。入力は任意です。" x="33" y="129" width="736" height="28" />
+        <instance id="64:5714" name="STC / Text field" x="33" y="177" width="736" height="126" />
+        <text id="64:5715" name="□ 個人情報の取り扱いに同意する　必須" x="33" y="323" width="736" height="24" />
+        <text id="64:5716" name="プライバシーポリシーを確認する ↗" x="33" y="367" width="736" height="24" />
+        <text id="64:5717" name="□ 税務・会計のお役立ち情報を受け取る　任意" x="33" y="411" width="736" height="24" />
+        <text id="64:5718" name="継続案内は希望する方だけにお届けします。同意しなくても、結果の受取・相談は利用できます。" x="33" y="455" width="736" height="24" />
+        <instance id="64:5719" name="Submit" x="33" y="499" width="736" height="56" />
+        <instance id="64:5720" name="Return result" x="33" y="575" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5820" name="21 / 30分相談 — PC 1440 / v3" x="200" y="8650" width="1440" height="1290">
+    <frame id="64:5821" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5822" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2032" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2033" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2034" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2035" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5825" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5826" name="Desktop content" x="0" y="108" width="1440" height="1182">
+      <frame id="64:5827" name="Content card / PC" x="320" y="40" width="800" height="1102">
+        <text id="64:5828" name="30分無料相談" x="33" y="33" width="736" height="20" />
+        <text id="64:5829" name="相談したいことを、聞かせてください。" x="33" y="73" width="736" height="36" />
+        <text id="64:5830" name="ご希望を送信後、日程を調整します。この送信で予約は確定しません。" x="33" y="129" width="736" height="28" />
+        <instance id="64:5831" name="STC / Text field" x="33" y="177" width="736" height="126" />
+        <instance id="64:5832" name="STC / Text field" x="33" y="323" width="736" height="126" />
+        <instance id="64:5833" name="STC / Text field" x="33" y="469" width="736" height="126" />
+        <instance id="64:5834" name="STC / Text field" x="33" y="615" width="736" height="126" />
+        <text id="64:5835" name="□ 個人情報の取り扱いに同意する　必須" x="33" y="761" width="736" height="24" />
+        <text id="64:5836" name="プライバシーポリシーを確認する ↗" x="33" y="805" width="736" height="24" />
+        <text id="64:5837" name="□ 税務・会計のお役立ち情報を受け取る　任意" x="33" y="849" width="736" height="24" />
+        <text id="64:5838" name="継続案内は希望する方だけにお届けします。同意しなくても、結果の受取・相談は利用できます。" x="33" y="893" width="736" height="24" />
+        <instance id="64:5839" name="Submit" x="33" y="937" width="736" height="56" />
+        <instance id="64:5840" name="Return result" x="33" y="1013" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:5964" name="22 / 入力エラー — PC 1440 / v3" x="1760" y="8650" width="1440" height="1024">
+    <frame id="64:5965" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:5966" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2036" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2037" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2038" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2039" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:5969" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:5970" name="Desktop content" x="0" y="108" width="1440" height="860">
+      <frame id="64:5971" name="Content card / PC" x="320" y="40" width="800" height="780">
+        <text id="64:5972" name="診断結果のメール受取" x="33" y="33" width="736" height="20" />
+        <text id="64:5973" name="結果をメールで受け取れます。" x="33" y="73" width="736" height="36" />
+        <text id="64:5974" name="診断結果を手元に残したい方へ。入力は任意です。" x="33" y="129" width="736" height="28" />
+        <frame id="64:5975" name="Error summary" x="33" y="177" width="736" height="96">
+          <text id="64:5976" name="! 入力内容をご確認ください" x="16" y="16" width="704" height="24" />
+          <text id="64:5977" name="メールアドレスの形式と、個人情報の取り扱いへの同意を確認してください。" x="16" y="56" width="704" height="24" />
+        </frame>
+        <instance id="64:5978" name="STC / Text field" x="33" y="293" width="736" height="126" />
+        <text id="64:5979" name="□ 個人情報の取り扱いに同意する　必須" x="33" y="439" width="736" height="24" />
+        <text id="64:5980" name="プライバシーポリシーを確認する ↗" x="33" y="483" width="736" height="24" />
+        <text id="64:5981" name="□ 税務・会計のお役立ち情報を受け取る　任意" x="33" y="527" width="736" height="24" />
+        <text id="64:5982" name="継続案内は希望する方だけにお届けします。同意しなくても、結果の受取・相談は利用できます。" x="33" y="571" width="736" height="24" />
+        <instance id="64:5983" name="Submit" x="33" y="615" width="736" height="56" />
+        <instance id="64:5984" name="Return result" x="33" y="691" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:6084" name="23 / メール送信完了 — PC 1440 / v3" x="3320" y="8650" width="1440" height="1024">
+    <frame id="64:6085" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:6086" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2040" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2041" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2042" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2043" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:6089" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:6090" name="Desktop content" x="0" y="108" width="1440" height="434">
+      <frame id="64:6091" name="Content card / PC" x="320" y="40" width="800" height="354">
+        <text id="64:6092" name="診断結果のメール受取" x="33" y="33" width="736" height="20" />
+        <frame id="64:6093" name="Label / ✓ 送信完了" x="33" y="73" width="180" height="40">
+          <text id="64:6094" name="✓ 送信完了" x="8" y="8" width="164" height="24" />
+        </frame>
+        <text id="64:6095" name="診断結果をお送りしました。" x="33" y="133" width="736" height="36" />
+        <text id="64:6096" name="入力したメールアドレスをご確認ください。見つからない場合は、迷惑メールフォルダもご確認ください。" x="33" y="189" width="736" height="56" />
+        <instance id="64:6097" name="Return result" x="33" y="265" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:6179" name="24 / 通信エラー — PC 1440 / v3" x="4880" y="8650" width="1440" height="1024">
+    <frame id="64:6180" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:6181" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2044" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2045" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2046" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2047" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:6184" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:6185" name="Desktop content" x="0" y="108" width="1440" height="422">
+      <frame id="64:6186" name="Content card / PC" x="320" y="40" width="800" height="342">
+        <text id="64:6187" name="診断結果のメール受取" x="33" y="33" width="736" height="20" />
+        <text id="64:6188" name="送信できませんでした。" x="33" y="73" width="736" height="36" />
+        <text id="64:6189" name="通信環境を確認して、もう一度お試しください。入力内容はこの画面に残っています。" x="33" y="129" width="736" height="28" />
+        <instance id="64:6190" name="Retry" x="33" y="177" width="736" height="56" />
+        <instance id="64:6191" name="Return result" x="33" y="253" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="64:6283" name="25 / 相談希望受付 — PC 1440 / v3" x="200" y="10300" width="1440" height="1024">
+    <frame id="64:6284" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="64:6285" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2048" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2049" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2050" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2051" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="64:6288" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="64:6289" name="Desktop content" x="0" y="108" width="1440" height="394">
+      <frame id="64:6290" name="Content card / PC" x="320" y="40" width="800" height="314">
+        <frame id="64:6291" name="Label / ✓ 相談希望を受け付けました" x="33" y="33" width="320" height="40">
+          <text id="64:6292" name="✓ 相談希望を受け付けました" x="8" y="8" width="304" height="24" />
+        </frame>
+        <text id="64:6293" name="ご相談に向けて、日程を調整します。" x="33" y="93" width="736" height="36" />
+        <text id="64:6294" name="ご入力のメールアドレス宛に、日程調整のご案内をお送りします。この時点では予約は確定していません。" x="33" y="149" width="736" height="56" />
+        <instance id="64:6295" name="Return result" x="33" y="225" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="67:4380" name="26 / 送信中 — PC 1440 / v3" x="200" y="11950" width="1440" height="1024">
+    <frame id="67:4381" name="Header / PC diagnostic" x="0" y="0" width="1440" height="108">
+      <frame id="67:4382" name="Brand" x="32" y="24" width="1040" height="60">
+        <frame id="137:2052" name="Brand" x="0" y="-8" width="342" height="68">
+          <rounded-rectangle id="137:2053" name="ChatGPT 画像 2026年10月13日 19_38_52 1" x="0" y="0" width="175" height="38" />
+          <instance id="137:2054" name="STC v3 / Logo / logo" x="146" y="45" width="196" height="23" />
+          <text id="137:2055" name="Produce by" x="55" y="47" width="86" height="20" />
+        </frame>
+      </frame>
+      <instance id="67:4385" name="Close PC" x="1096" y="26" width="280" height="56" />
+    </frame>
+    <frame id="67:4386" name="Desktop content" x="0" y="108" width="1440" height="744">
+      <frame id="67:4387" name="Content card / PC" x="320" y="40" width="800" height="664">
+        <text id="67:4388" name="診断結果のメール受取" x="33" y="33" width="736" height="20" />
+        <text id="67:4389" name="結果をメールで受け取れます。" x="33" y="73" width="736" height="36" />
+        <text id="67:4390" name="診断結果を手元に残したい方へ。入力は任意です。" x="33" y="129" width="736" height="28" />
+        <instance id="67:4391" name="STC / Text field" x="33" y="177" width="736" height="126" />
+        <text id="67:4392" name="□ 個人情報の取り扱いに同意する　必須" x="33" y="323" width="736" height="24" />
+        <text id="67:4393" name="プライバシーポリシーを確認する ↗" x="33" y="367" width="736" height="24" />
+        <text id="67:4394" name="□ 税務・会計のお役立ち情報を受け取る　任意" x="33" y="411" width="736" height="24" />
+        <text id="67:4395" name="継続案内は希望する方だけにお届けします。同意しなくても、結果の受取・相談は利用できます。" x="33" y="455" width="736" height="24" />
+        <instance id="67:4396" name="Submit" x="33" y="499" width="736" height="56" />
+        <instance id="67:4397" name="Return result" x="33" y="575" width="736" height="56" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="67:4475" name="00 / v3 PC診断・画面一覧" x="200" y="-800" width="1440" height="531">
+    <text id="67:4476" name="STARTUP TAX CHECK / v3.0" x="48" y="48" width="1344" height="23" />
+    <text id="67:4477" name="PC診断フロー｜すべての質問と状態" x="48" y="91" width="1344" height="59" />
+    <text id="67:4478" name="公式ロゴ・人物写真・ピル型CTAを継承。既存v2.0は保全しています。" x="48" y="170" width="1344" height="26" />
+    <text id="67:4479" name="プロトタイプは固定回答の画面遷移サンプルです。選択値の保持・条件判定・実際の送信や予約は実装時の対象です。" x="48" y="216" width="1344" height="23" />
+    <frame id="67:4480" name="Flow index links" x="48" y="259" width="1344" height="178">
+      <frame id="67:4481" name="Index column 0" x="0" y="0" width="421" height="178">
+        <text id="67:4482" name="通常の診断を開始 →" x="0" y="0" width="421" height="26" />
+        <text id="67:4484" name="設立準備中の質問 →" x="0" y="38" width="421" height="26" />
+        <text id="67:4486" name="資金調達なしの分岐 →" x="0" y="76" width="421" height="26" />
+        <text id="67:4488" name="未回答エラー →" x="0" y="114" width="421" height="26" />
+        <text id="67:4490" name="中断確認 →" x="0" y="152" width="421" height="26" />
+      </frame>
+      <frame id="67:4492" name="Index column 1" x="461" y="0" width="421" height="178">
+        <text id="67:4493" name="結果A：優先確認 →" x="0" y="0" width="421" height="26" />
+        <text id="67:4495" name="結果B：準備済み →" x="0" y="38" width="421" height="26" />
+        <text id="67:4497" name="結果C：設立前 →" x="0" y="76" width="421" height="26" />
+        <text id="67:4499" name="メール受取 →" x="0" y="114" width="421" height="26" />
+        <text id="67:4501" name="30分無料相談 →" x="0" y="152" width="421" height="26" />
+      </frame>
+      <frame id="67:4503" name="Index column 2" x="922" y="0" width="421" height="140">
+        <text id="67:4504" name="入力エラー →" x="0" y="0" width="421" height="26" />
+        <text id="67:4506" name="メール送信完了 →" x="0" y="38" width="421" height="26" />
+        <text id="67:4508" name="通信エラー →" x="0" y="76" width="421" height="26" />
+        <text id="67:4510" name="相談希望受付 →" x="0" y="114" width="421" height="26" />
+      </frame>
+    </frame>
+    <text id="67:4512" name="送信中の状態 →" x="48" y="457" width="1344" height="26" />
+  </frame>
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

@@ -1,0 +1,132 @@
+@layer sections {
+  /* 09 / FAQ  PC 58:4540（1440×781）  SP 58:4767（390×697）  部品 STC v3 / FAQ（69:2244） */
+  .faq {
+    background: var(--stc-paper);
+  }
+
+  /* アイブロウ・見出し・一覧の間隔は0（一覧の上padding 24のみ）。Figmaどおり */
+  .faq .l-section {
+    gap: 0;
+  }
+
+  .faq__list {
+    padding-top: var(--space-24);
+  }
+
+  .faq__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-bottom: var(--space-24);
+    /* Figmaの枠線は内側の線（高さに加算されない）のため inset で再現 */
+    box-shadow: inset 0 -1px 0 var(--stc-border);
+  }
+
+  .faq__item:first-child {
+    box-shadow: inset 0 1px 0 var(--stc-border), inset 0 -1px 0 var(--stc-border);
+  }
+
+  /* 項目内の区切り線（Divider） */
+  .faq__item::after {
+    height: 1px;
+    background: var(--stc-border);
+    content: '';
+  }
+
+  .faq__button {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-16);
+    width: 100%;
+    padding-top: var(--space-24);
+    font-weight: 700;
+  }
+
+  .faq__button[aria-disabled='true'] {
+    cursor: default;
+  }
+
+  .faq__question {
+    flex: 1 0 0;
+    min-width: 1px;
+    line-height: var(--lh-label);
+  }
+
+  .faq__icon {
+    flex: none;
+    width: 24px;
+    color: var(--stc-muted);
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .faq__icon::before {
+    content: '+';
+  }
+
+  /* 開閉（2026-10-18 ご依頼。D-048）：高さを 0fr ⇄ 1fr で動かす。
+     閉じている間は項目内の間隔（gap 16）を打ち消し、Figmaの閉状態と同じ高さにする。
+     閉じた回答は visibility: hidden で読み上げ・Tab移動の対象から外す（閉じる動きの後で切り替え） */
+  .faq__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    margin-top: calc(var(--space-16) * -1);
+    color: var(--stc-muted);
+    line-height: var(--lh-body);
+    visibility: hidden;
+    transition:
+      grid-template-rows var(--dur-base) var(--ease-out),
+      margin-top var(--dur-base) var(--ease-out),
+      visibility 0s linear var(--dur-base);
+  }
+
+  .faq__answer-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .is-open .faq__answer {
+    grid-template-rows: 1fr;
+    margin-top: 0;
+    visibility: visible;
+    transition:
+      grid-template-rows var(--dur-base) var(--ease-out),
+      margin-top var(--dur-base) var(--ease-out),
+      visibility 0s;
+  }
+
+  /* ホバー：質問と＋／−の色をブランド色に（開閉できる項目のみ。D-047） */
+  .faq__question {
+    transition: color var(--dur-fast);
+  }
+
+  .faq__button:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  .faq__button:not([aria-disabled='true']):hover .faq__question,
+  .faq__button:not([aria-disabled='true']):hover .faq__icon {
+    color: var(--stc-brand);
+  }
+
+  /* 開いた状態（State=Open）：ブランド色、PCはInter Bold指定 */
+  .is-open .faq__question {
+    color: var(--stc-brand);
+    font-family: var(--font-faq-q);
+  }
+
+  .is-open .faq__icon {
+    color: var(--stc-brand);
+  }
+
+  .is-open .faq__icon::before {
+    content: '\2212';
+  }
+
+  @media (max-width: 767px) {
+    .is-open .faq__question {
+      font-family: var(--font-label);
+    }
+  }
+}

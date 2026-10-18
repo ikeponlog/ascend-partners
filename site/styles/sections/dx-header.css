@@ -1,0 +1,139 @@
+@layer sections {
+  /* Header / PC diagnostic 64:3245（高さ108、padding 24/32）・SP Header 85:2244（高さ96、ブランド 24,10） */
+  .dx-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-24);
+    height: 108px;
+    padding: var(--space-24) var(--space-32);
+    background: var(--stc-paper);
+  }
+
+  /* ブランド表記（342×68）：TAX CHECK 175×38、Produce by（55,47）、事務所ロゴ 194.919×21.241（146,45） */
+  .dx-brand {
+    position: relative;
+    flex: 1 1 auto;
+    width: 342px;
+    max-width: 1040px;
+    height: 60px;
+  }
+
+  /* ロゴ全体がLPトップへのリンク（D-062）。クリック範囲はブランド表記の342×60だけ */
+  .dx-brand__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 342px;
+    height: 60px;
+    border-radius: var(--radius-8);
+    transition: opacity var(--dur-fast);
+  }
+
+  .dx-brand__link:hover {
+    opacity: 0.8;
+  }
+
+  .dx-brand__link:focus-visible {
+    outline: var(--focus-ring) solid var(--stc-focus);
+    outline-offset: 6px;
+  }
+
+  .dx-brand__link > * {
+    position: absolute;
+  }
+
+  .dx-brand__product {
+    top: -8px;
+    left: 0;
+    width: 175px;
+    height: 38px;
+    overflow: hidden;
+  }
+
+  .dx-brand__product img {
+    position: absolute;
+    top: -26.32%;
+    left: -4.77%;
+    width: 101.73%;
+    max-width: none;
+    height: 157.89%;
+  }
+
+  .dx-brand__produce {
+    top: 39px;
+    left: 55px;
+    color: var(--color-produce);
+    font-family: var(--font-produce);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  /* Figmaは194.919×21.31。高さを整数px（21）にして鮮明に描画する（2026-10-18 ご依頼。D-060） */
+  .dx-brand__logo {
+    top: 37px;
+    left: 146px;
+    width: auto;
+    max-width: none;
+    height: 21px;
+  }
+
+  .dx-header__action {
+    --cta-width: 280px;
+  }
+
+  .dx-header__action[hidden] {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .dx-header {
+      align-items: flex-start;
+      height: 96px;
+      padding: 10px var(--page-gutter) 0;
+    }
+
+    .dx-brand {
+      flex: none;
+      height: 62px;
+    }
+
+    .dx-brand__product {
+      top: 0;
+    }
+
+    .dx-brand__produce {
+      top: 47px;
+      font-family: var(--font-label);
+      font-weight: 400;
+    }
+
+    .dx-brand__logo {
+      top: 45px;
+    }
+
+    /* SP参照のヘッダーにはボタンがない（中断は本文下のリンク） */
+    .dx-header__action {
+      display: none;
+    }
+  }
+
+  /* 360〜365px：左24＋ブランド342が幅を超えるため、左の整列軸を保ったまま縮小（R3で横はみ出し6pxを検出。D-036） */
+  @media (min-width: 360px) and (max-width: 365px) {
+    .dx-brand {
+      zoom: 0.96;
+    }
+  }
+
+  @media (max-width: 359px) {
+    .dx-header {
+      padding-inline: var(--space-16);
+    }
+
+    /* 342幅のブランド表記を内容幅に合わせて縮小（比率維持） */
+    .dx-brand {
+      zoom: 0.84;
+    }
+  }
+}

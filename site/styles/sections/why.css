@@ -1,0 +1,251 @@
+@layer sections {
+  /* 07 / Why Ascend  PC 58:4512（1440×1493）  SP 58:4739（390×2271） */
+  .why {
+    background: var(--stc-paper);
+  }
+
+  .why__inner {
+    gap: var(--space-48);
+    padding-block: var(--section-space-emphasis);
+  }
+
+  .why__pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 405px));
+    gap: var(--space-32);
+  }
+
+  .why__pillar {
+    border-radius: var(--radius-12);
+    background: var(--color-card-rose);
+  }
+
+  .why__divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background: var(--stc-border);
+  }
+
+  .why__profile {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-48);
+  }
+
+  .why__photo {
+    display: flex;
+    flex: 0 1 492px;
+    flex-direction: column;
+    gap: var(--space-16);
+    min-width: 0;
+  }
+
+  .why__photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 492 / 348;
+    object-fit: cover;
+  }
+
+  .why__name {
+    display: flex;
+    align-items: center;
+  }
+
+  .why__name-office {
+    width: 242px;
+    height: 18px;
+    color: var(--stc-muted);
+    font-size: 15px;
+    line-height: var(--lh-caption);
+  }
+
+  .why__name-person {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    white-space: pre;
+  }
+
+  .why__message {
+    display: flex;
+    flex: 0 1 740px;
+    flex-direction: column;
+    gap: var(--space-24);
+    min-width: 0;
+  }
+
+  .why__message-label {
+    color: var(--stc-brand);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .why__message-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: var(--lh-heading);
+  }
+
+  .why__message-text {
+    line-height: var(--lh-body);
+  }
+
+  .why__message-link {
+    align-self: flex-start;
+    font-weight: 700;
+    line-height: var(--lh-label);
+  }
+
+  .why__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-48);
+    background: var(--stc-canvas);
+  }
+
+  .why__brand-image {
+    flex: 0 1 560px;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 560 / 309;
+    object-fit: contain;
+  }
+
+  .why__brand-message {
+    display: flex;
+    flex: 0 1 672px;
+    flex-direction: column;
+    gap: var(--space-16);
+    min-width: 0;
+    padding: var(--space-24);
+  }
+
+  .why__brand-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: var(--lh-heading);
+  }
+
+  .why__brand-text {
+    color: var(--stc-muted);
+    line-height: var(--lh-body);
+  }
+
+  /* 参照のない中間幅：写真列が狭まると事務所名と代表名が重なるため折り返しを許可 */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .why__name {
+      flex-wrap: wrap;
+    }
+
+    .why__name-office {
+      height: auto;
+    }
+  }
+
+  /* 参照のない768〜1199px：3列カードは縦積み（D-013） */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .why__pillars {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .why__inner {
+      gap: var(--space-32);
+      padding-block: var(--space-56);
+    }
+
+    /* Figmaのコピーは先頭に半角スペースあり（「 WHY ASCEND PARTNERS」） */
+    .why__eyebrow-sp {
+      white-space: pre;
+    }
+
+    /* 2026-10-18 Figma更新：Serif Medium 28/1.55 → Serif Bold 24/36（D-050） */
+    .why__title,
+    .why__message-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+
+    .why__pillars {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* SPカード：上端にブランド色の1px線 */
+    .why__pillar::before {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 1px;
+      background: var(--stc-brand);
+      content: '';
+    }
+
+    .why__pillar .c-numcard__num {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .why__profile {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-24);
+    }
+
+    .why__photo,
+    .why__message {
+      flex: none;
+    }
+
+    .why__photo img {
+      aspect-ratio: 342 / 230;
+    }
+
+    .why__name-office {
+      width: 216px;
+      height: auto;
+      font-size: 14px;
+    }
+
+    .why__name-person {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .why__message-label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .why__brand {
+      flex-direction: column;
+      gap: var(--space-24);
+    }
+
+    .why__brand-image {
+      flex: none;
+      width: 100%;
+      aspect-ratio: 342 / 189;
+    }
+
+    .why__brand-message {
+      flex: none;
+      width: 100%;
+      padding: var(--space-20);
+    }
+
+    /* 見出し枠322px（内容幅302pxより20px広い）をFigmaどおり維持 */
+    .why__brand-title {
+      margin-right: calc(var(--space-20) * -1);
+      font-size: 26px;
+    }
+  }
+}

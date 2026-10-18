@@ -1,0 +1,44 @@
+@layer sections {
+  /* Audience strip  PC 58:4401（1440×144）  SP 58:4626（390×128） */
+  .audience {
+    background: var(--stc-canvas);
+  }
+
+  /* PC左paddingはFigma 79px → 他セクションの整列軸80pxへスナップ（S-001） */
+  .audience__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    max-width: calc(var(--content-max) + var(--page-gutter) * 2);
+    margin-inline: auto;
+    padding: var(--space-40) var(--page-gutter);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* Figma指定はEB Garamond Bold。和文グリフはフォールバック（Noto Sans JP）で描画される */
+  .audience__lead {
+    font-family: var(--font-label);
+    font-weight: 700;
+  }
+
+  .audience__list {
+    color: var(--stc-muted);
+  }
+
+  @media (max-width: 767px) {
+    .audience__inner {
+      gap: var(--space-8);
+      padding: var(--space-24) var(--page-gutter);
+    }
+
+    .audience__lead {
+      font-family: var(--font-body);
+    }
+
+    .audience__list {
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+  }
+}

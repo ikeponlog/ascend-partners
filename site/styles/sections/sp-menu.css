@@ -1,0 +1,202 @@
+@layer sections {
+  /* SPメニュー（2026-10-18 ご依頼：ascend-tax.jp のスマホ用メニューの仕様に合わせる。D-056）
+     公式サイトの実測：開閉ボタン 100×40・角丸28・#111、2本線（幅30）が×に。全画面の暗い面がフェード（0.6s）。
+     項目 17px 白・行57（padding 15/15/12）・先頭に赤い短い線。ボタン 300×50 のピル（間隔10）。
+     768px以上（PCのナビあり）では表示しない */
+  .sp-menu-toggle,
+  .site-header__logo-reverse {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .site-header__inner {
+      gap: var(--space-12);
+    }
+
+    /* 開閉ボタンと並べるため、ロゴは最大230px（公式サイトと同じ程度）に縮小 */
+    .site-header__logo {
+      flex: 1 1 0;
+      max-width: 230px;
+      height: auto;
+      line-height: 0;
+    }
+
+    /* 高さを整数px（25）にして、79の中で上27・スクロール中59の中で上17に置く（ロゴを鮮明に。D-060） */
+    .site-header__logo img {
+      width: auto;
+      max-width: 100%;
+      height: 25px;
+    }
+
+    .sp-menu-toggle:not([hidden]) {
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      border-radius: 28px;
+      background: #111;
+      color: var(--stc-paper);
+      cursor: pointer;
+    }
+
+    .sp-menu-toggle:focus-visible {
+      outline: var(--focus-ring) solid var(--stc-focus);
+      outline-offset: 2px;
+    }
+
+    /* 三本線（2026-10-18 ご依頼で2本→3本。D-056）：幅26・間隔6。開くと中央が消え、上下が×に */
+    .sp-menu-toggle__bars {
+      position: relative;
+      width: 26px;
+      height: 14px;
+    }
+
+    .sp-menu-toggle__bars span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background: currentColor;
+      transition: transform 0.5s var(--ease-out), top 0.5s var(--ease-out), opacity 0.3s;
+    }
+
+    .sp-menu-toggle__bars span:nth-child(1) {
+      top: 0;
+    }
+
+    .sp-menu-toggle__bars span:nth-child(2) {
+      top: 6px;
+    }
+
+    .sp-menu-toggle__bars span:nth-child(3) {
+      top: 12px;
+    }
+
+    .sp-menu-toggle[aria-expanded='true'] .sp-menu-toggle__bars span:nth-child(1),
+    .sp-menu-toggle[aria-expanded='true'] .sp-menu-toggle__bars span:nth-child(3) {
+      top: 6px;
+    }
+
+    .sp-menu-toggle[aria-expanded='true'] .sp-menu-toggle__bars span:nth-child(1) {
+      transform: rotate(30deg);
+    }
+
+    .sp-menu-toggle[aria-expanded='true'] .sp-menu-toggle__bars span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .sp-menu-toggle[aria-expanded='true'] .sp-menu-toggle__bars span:nth-child(3) {
+      transform: rotate(-30deg);
+    }
+
+    /* 開いている間：ヘッダーは透明で暗い面の上に乗り、ロゴは白抜き版に */
+    .site-header.is-menu-open {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .is-menu-open .site-header__logo-default {
+      display: none;
+    }
+
+    .is-menu-open .site-header__logo-reverse {
+      display: block;
+    }
+
+    .sp-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90; /* ヘッダー（100）の下 */
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--header-h);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      /* 公式サイトのメニューと同じ暗い面（濃いグレーの斜めのグラデーション） */
+      background: linear-gradient(160deg, #2b2d2d 0%, #1d1f1f 55%, #141515 100%);
+      color: var(--stc-paper);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s linear, visibility 0s linear 0.6s;
+    }
+
+    .sp-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s linear, visibility 0s;
+    }
+
+    .sp-menu__nav,
+    .sp-menu__actions {
+      position: relative;
+    }
+
+    .sp-menu__links a {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      padding: 15px var(--page-gutter) 12px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0.7px;
+      transition: opacity var(--dur-fast);
+    }
+
+    /* 先頭の赤い短い線 */
+    .sp-menu__links a::before {
+      flex: none;
+      width: 8px;
+      height: 2px;
+      background: var(--stc-brand);
+      content: '';
+    }
+
+    .sp-menu__links a:hover {
+      opacity: 0.7;
+    }
+
+    .sp-menu__actions {
+      --btn-height: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 50px;
+      padding: 0 var(--page-gutter) var(--space-40);
+    }
+
+    .sp-menu__cta {
+      --cta-width: 300px;
+    }
+
+    .sp-menu__tel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      width: 300px;
+      max-width: 100%;
+      height: 50px;
+      border: 1px solid var(--stc-paper);
+      border-radius: var(--radius-pill);
+      background: #111;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      transition: background-color var(--dur-fast);
+    }
+
+    .sp-menu__tel:hover {
+      background: #2a2a2a;
+    }
+
+    /* 開いている間は背面のページをスクロールさせない */
+    html.is-menu-open {
+      overflow: hidden;
+    }
+  }
+}

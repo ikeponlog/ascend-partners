@@ -1,0 +1,160 @@
+@layer sections {
+  /* Footer  PC 58:4563（1440×224）  SP 58:4790（390×336.69） */
+  .site-footer {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--stc-dark);
+    color: var(--stc-paper);
+  }
+
+  .site-footer__bg,
+  .site-footer__bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .site-footer__bg {
+    z-index: -1;
+    mix-blend-mode: multiply;
+  }
+
+  .site-footer__bg img {
+    max-width: none;
+    object-fit: cover;
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    max-width: calc(var(--content-max) + var(--page-gutter) * 2);
+    margin-inline: auto;
+    padding: var(--space-64) var(--page-gutter);
+  }
+
+  /* Figmaの行幅（871+495 / 1040+256）は内容幅1280を超え、右側の文字は右paddingへはみ出す。
+     1440px以上はFigmaの左列幅を固定し、右列の文字ははみ出しを許容（Figmaどおり） */
+  .site-footer__top,
+  .site-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16) var(--space-32);
+  }
+
+  @media (min-width: 1440px) {
+    .site-footer__top,
+    .site-footer__bottom {
+      display: grid;
+      gap: 0;
+    }
+
+    .site-footer__top {
+      grid-template-columns: 871px minmax(0, 1fr);
+    }
+
+    .site-footer__bottom {
+      grid-template-columns: 1040px minmax(0, 1fr);
+    }
+
+    .site-footer__copyright {
+      white-space: nowrap;
+    }
+  }
+
+  .site-footer__logo {
+    height: 41px;
+  }
+
+  .site-footer__logo img {
+    width: 320px;
+    height: 34.952px;
+  }
+
+  .site-footer__tagline {
+    font-size: 20px;
+    line-height: var(--lh-body);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .site-footer__links {
+    display: flex;
+    font-size: 14px;
+    line-height: var(--lh-caption);
+  }
+
+  .site-footer__links li:first-child {
+    width: 128px;
+  }
+
+  .site-footer__copyright {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .site-footer__copyright small {
+    font-size: inherit;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .site-footer__tagline {
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .site-footer__bg {
+      display: none;
+    }
+
+    .site-footer__inner {
+      padding: var(--space-40) var(--page-gutter);
+    }
+
+    .site-footer__top,
+    .site-footer__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-32);
+    }
+
+    /* 枠300×32.692に対し、ロゴ本体は320×34.952のまま枠外へはみ出す（Figmaどおり） */
+    .site-footer__logo {
+      width: min(300px, 100%);
+      height: 32.692px;
+    }
+
+    /* 参照幅以下（〜367px）では内容幅に収まるよう比率を保って縮小 */
+    .site-footer__logo img {
+      max-width: calc(100vw - var(--page-gutter) * 2);
+      height: auto;
+      aspect-ratio: 320 / 34.952;
+    }
+
+    .site-footer__tagline {
+      font-size: 16px;
+      letter-spacing: 0;
+      white-space: normal;
+    }
+
+    .site-footer__links {
+      flex-direction: column;
+      gap: var(--space-32);
+    }
+
+    .site-footer__links li:first-child {
+      width: auto;
+    }
+
+    .site-footer__copyright {
+      font-weight: 700;
+    }
+  }
+}

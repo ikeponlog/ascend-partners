@@ -1,6 +1,8 @@
+node_modules/
+dist/
+preview/
+artifacts/
+site/api/data/
+.claude/
 .DS_Store
-.visual-qa/
-sources/
-AGENTS.md
-public/assets/ascend-logo-color.png
-public/assets/ascend-logo-white.png
+*.log
