@@ -19,42 +19,58 @@
       transform: none;
     }
 
-    /* Brand CTA：浮き上がり＋矢印カプセルの矢印が前へ（色の変化はFigmaの Hover / Pressed のまま） */
-    /* ホバーの浮き上がりは translate、フェードアップは opacity / transform で別々に動かす（両方の要素がある） */
-    .c-cta,
+    /* Brand CTA：公式サイトのボタンと同じく、色だけが 0.3秒の一定速度で変わる（2026-10-19 ご依頼。D-066。
+       以前の浮き上がり・矢印の前進はやめた）。フェードアップ（opacity / transform）は別に動かす */
+    .c-cta {
+      transition:
+        opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        background-color var(--dur-official) linear,
+        color var(--dur-official) linear;
+    }
+
+    .c-cta__capsule,
+    .c-cta__capsule img {
+      transition:
+        background-color var(--dur-official) linear,
+        filter var(--dur-official) linear;
+    }
+
+    /* 番号付きカード：ホバーの浮き上がりは translate、フェードアップは opacity / transform で別々に動かす */
     .c-numcard {
       transition:
         opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
         transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
         translate var(--dur-base) var(--ease-out),
-        box-shadow var(--dur-base) var(--ease-out),
-        background-color var(--dur-fast);
-    }
-
-    .c-cta__capsule img {
-      transition: transform var(--dur-base) var(--ease-out);
+        box-shadow var(--dur-base) var(--ease-out);
     }
   }
 
   @media (prefers-reduced-motion: no-preference) and (hover: hover) {
-    .c-cta:hover {
-      box-shadow: var(--shadow-raise);
-      translate: 0 -2px;
-    }
-
-    .c-cta:hover .c-cta__capsule img {
-      transform: translateX(4px);
-    }
-
-    .c-cta:active {
-      box-shadow: none;
-      translate: none;
-    }
-
     /* 番号付きカード：少し浮き上がる（リンクではないためカーソルは変えない） */
     .c-numcard:hover {
       box-shadow: var(--shadow-raise);
       translate: 0 -4px;
+    }
+  }
+
+  /* 06 Why Ascend の流れる英文（D-067）：公式サイトと同じく右から左へ一定速度で流れ続ける。
+     4つ並べた半分（2つ分）を動かして継ぎ目なく繰り返す。速さは公式の実測（画面幅1440で約29px/秒、SPで約13px/秒）に合わせた */
+  @media (prefers-reduced-motion: no-preference) {
+    .why__marquee-track {
+      animation: why-marquee 176s linear infinite;
+    }
+
+    @keyframes why-marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+    .why__marquee-track {
+      animation-duration: 208s;
     }
   }
 
@@ -133,6 +149,44 @@
     .benefits__arrow,
     .steps__arrow {
       --nudge: 0 6px;
+    }
+  }
+
+  /* 08 CTA（START HERE）：ホバーで赤 → 暗い地に反転（2026-10-19 ご依頼：公式サイトのお問い合わせ帯が暗い地 → 赤に切り替わるのと同じ演出。D-068）。
+     テクスチャ（.cta__bg）の上に暗い層（公式の暗い帯と同じく、左上がわずかに明るい --stc-ink → --stc-dark）を重ね、0.3秒で切り替える。
+     暗い地では「30分無料相談」ボタン（暗い地）の形が見えなくなるため、白い細枠で輪郭を示す */
+  @media (hover: hover) {
+    /* ::after は .cta__bg（z-index: -1）より後に描かれるため、同じ -1 でテクスチャの上・内容の下に重なる */
+    .cta::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(110deg, var(--stc-ink), var(--stc-dark) 60%);
+      opacity: 0;
+    }
+
+    .cta:hover::after {
+      opacity: 1;
+    }
+
+    .cta:hover .cta__consult {
+      box-shadow: inset 0 0 0 1px var(--stc-paper);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .cta::after {
+      transition: opacity var(--dur-official) linear;
+    }
+
+    .cta__consult {
+      transition:
+        opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        background-color var(--dur-official) linear,
+        color var(--dur-official) linear,
+        box-shadow var(--dur-official) linear;
     }
   }
 

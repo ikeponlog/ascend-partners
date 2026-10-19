@@ -248,4 +248,42 @@
       font-size: 26px;
     }
   }
+
+  /* 流れる英文（2026-10-19 ご依頼：公式サイト「私たちについて」の ASCEND PARTNERS と同じ演出。D-067）
+     公式は白40%の画像（字高168px、SPは90px）を写真に重ねている。ここは白地のため、ブランド枠と同じ薄い地色で透かしのように見せる。
+     書体は公式の画像に近い EB Garamond（サイトで使用中）。字高 ≒ 0.65em。流れはmotion.css */
+  .why__marquee {
+    overflow: clip;
+    margin-top: calc(var(--space-40) - var(--section-space-emphasis));
+    padding-bottom: var(--space-40);
+    color: var(--stc-canvas);
+    font-family: var(--font-label);
+    font-size: 258px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .why__marquee-track {
+    display: flex;
+    width: max-content;
+  }
+
+  /* 文字は装飾（公式は画像）。本文として扱われないよう ::before で描く（コントラスト基準の対象外の装飾文字） */
+  .why__marquee-track span::before {
+    content: 'ASCEND PARTNERS';
+    padding-right: 0.45em;
+    letter-spacing: 0.015em;
+  }
+
+  @media (max-width: 767px) {
+    .why__marquee {
+      margin-top: calc(var(--space-24) - var(--section-space-emphasis));
+      padding-bottom: var(--space-24);
+      font-size: 138px;
+    }
+  }
+
 }

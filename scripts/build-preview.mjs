@@ -34,6 +34,17 @@ await rm(out, { recursive: true, force: true });
 await rm(stage, { recursive: true, force: true });
 await cp(dist, stageDir, { recursive: true, filter: (src) => !src.startsWith(join(dist, 'api')) });
 
+// 読み込み時のちらつき対策（2026-10-19 ご依頼。D-069）：StatiCrypt は復号したページを document.write で書き出すため、
+// CSS の読み込みを待たずに一瞬スタイルなしの状態が描画される。CSS がそろうまでページを隠し、そろったら表示する（4秒で必ず表示）
+const CLOAK_STYLE = '<style id="preview-cloak">html{visibility:hidden}</style>';
+const CLOAK_SCRIPT = `<script>(()=>{const show=()=>document.getElementById('preview-cloak')?.remove();Promise.all([...document.querySelectorAll('link[rel="stylesheet"]')].map((l)=>l.sheet?0:new Promise((r)=>{l.addEventListener('load',r,{once:true});l.addEventListener('error',r,{once:true});}))).then(show);setTimeout(show,4000);})();</script>`;
+for (const page of ['index.html', 'diagnosis/index.html']) {
+  const file = join(stageDir, page);
+  const html = await readFile(file, 'utf8');
+  if (!html.includes('<meta charset="utf-8">') || !html.includes('</head>')) throw new Error(`ちらつき対策を入れる位置が見つかりません：${page}`);
+  await writeFile(file, html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${CLOAK_STYLE}`).replace('</head>', `  ${CLOAK_SCRIPT}\n</head>`));
+}
+
 // 入力画面：検索エンジンに載せない指定を加える
 const templatePath = join(root, 'node_modules/staticrypt/lib/password_template.html');
 const template = (await readFile(templatePath, 'utf8')).replace('<head>', '<head>\n        <meta name="robots" content="noindex, nofollow">');

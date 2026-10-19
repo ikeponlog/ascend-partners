@@ -96,12 +96,41 @@
     height: 130.43%;
   }
 
-  .c-cta--primary:hover {
-    --cta-bg: var(--stc-hover);
+  /* ホバー：公式サイト（ascend-tax.jp）のボタン（.u-btn-01）に合わせる（2026-10-19 ご依頼。D-066）。
+     暗い地 → 赤（#c83033）に変わり、矢印カプセルは白・矢印は黒に。赤い地のボタンは矢印カプセルだけ赤くなり矢印が白に。
+     動きは 0.3秒の一定速度（motion.css）。押している間（:active）は一段濃い赤。送信中など押せない状態では変えない */
+  .c-cta:where(:not([disabled], [aria-disabled='true'])):hover {
+    --cta-capsule: var(--stc-paper);
+  }
+
+  .c-cta--primary:where(:not([disabled], [aria-disabled='true'])):hover {
+    --cta-capsule: var(--color-official-hover);
+  }
+
+  /* 赤い矢印 → 白 */
+  .c-cta--primary:where(:not([disabled], [aria-disabled='true'])):hover .c-cta__capsule img {
+    filter: brightness(0) invert(1);
+  }
+
+  .c-cta--inverse:where(:not([disabled], [aria-disabled='true'])):hover,
+  .c-cta--secondary:where(:not([disabled], [aria-disabled='true'])):hover {
+    --cta-bg: var(--color-official-hover);
+    --cta-fg: var(--stc-paper);
+  }
+
+  /* 白い矢印 → 黒（白いカプセルの上） */
+  .c-cta--inverse:where(:not([disabled], [aria-disabled='true'])):hover .c-cta__capsule img,
+  .c-cta--secondary:where(:not([disabled], [aria-disabled='true'])):hover .c-cta__capsule img {
+    filter: brightness(0);
   }
 
   .c-cta--primary:active {
     --cta-bg: var(--stc-pressed);
+  }
+
+  .c-cta--inverse:active,
+  .c-cta--secondary:active {
+    --cta-bg: var(--stc-hover);
   }
 
   .c-cta--inverse {
@@ -110,21 +139,8 @@
     --cta-capsule: var(--stc-brand);
   }
 
-  .c-cta--inverse:hover {
-    --cta-bg: var(--stc-canvas);
-  }
-
-  .c-cta--inverse:active {
-    --cta-bg: var(--stc-tint);
-  }
-
   .c-cta--secondary {
     --cta-bg: var(--stc-dark);
     --cta-capsule: var(--stc-brand);
-  }
-
-  .c-cta--secondary:hover,
-  .c-cta--secondary:active {
-    --cta-bg: var(--stc-ink);
   }
 }

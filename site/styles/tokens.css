@@ -24,6 +24,8 @@
     --color-marker: #333333; /* --color-neutral-solid-gray-800 */
     --color-hero-tag-pc: rgb(255 255 255 / 0.4);
     --color-hero-tag-sp: rgb(255 255 255 / 0.5);
+    /* Color — 公式サイト（ascend-tax.jp）の実測（2026-10-19 ご依頼：ホバー効果を公式に合わせる。D-066） */
+    --color-official-hover: #c83033; /* ボタン（.u-btn-01）のホバー色 */
 
     /* Font family（役割変数） */
     /* '… Full' は納品ビルド（dist）でのみ定義される全文字の代替（scripts/build.mjs）。
@@ -90,6 +92,7 @@
     --dur-fast: 0.2s;
     --dur-base: 0.4s;
     --dur-reveal: 0.8s;
+    --dur-official: 0.3s; /* 公式サイトのボタン・お問い合わせ帯のホバー（linear）。D-066 */
     --reveal-distance: 24px;
     --shadow-header: 0 4px 20px rgb(34 43 51 / 0.08);
     --shadow-raise: 0 12px 32px rgb(34 43 51 / 0.12);
