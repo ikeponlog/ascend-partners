@@ -164,7 +164,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: var(--space-16); /* 2026-10-19 ご依頼「ボタンがくっつきすぎ」：公式の10px → 16px（D-071） */
       margin-top: 50px;
       padding: 0 var(--page-gutter) var(--space-40);
     }
