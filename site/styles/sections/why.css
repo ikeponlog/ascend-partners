@@ -102,8 +102,6 @@
   }
 
   .why__brand {
-    position: relative;
-    z-index: 1; /* 下の流れる英文（D-067）が少しもぐり込むため、枠を手前に */
     display: flex;
     align-items: center;
     gap: var(--space-48);
@@ -252,15 +250,18 @@
   }
 
   /* 流れる英文（2026-10-19 ご依頼：公式サイト「私たちについて」の ASCEND PARTNERS と同じ演出。D-067）
-     公式は白40%の画像（字高168px、SPは90px）を写真に重ねている。ここは白地のため、ブランド枠と同じ薄い地色で透かしのように見せる。
+     公式は白40%の画像（字高168px、SPは90px）を写真に重ねている。ここは白地のため、濃い文字色を薄く透過させて透かしのように見せる。
      書体は公式の画像に近い EB Garamond（サイトで使用中）。字高 ≒ 0.65em。流れはmotion.css
-     2026-10-19 ご依頼「上のカード要素の下に少し重なるバランスで」：文字の上端（行の上端から約0.17em）が枠の下端より
-     PC 40px・SP 20px 上に来るよう引き上げ、枠の後ろにもぐり込ませる */
+     2026-10-19 ご依頼「上のカード要素の下に少し重なるバランスで」「カードの下端の上に透過で重なるように」：
+     文字の上端（行の上端から約0.17em）が枠の下端より PC 40px・SP 20px 上に来るよう引き上げ、枠の手前に透過で重ねる。
+     色は文字色（--stc-ink）の6%：白地では枠と同じくらいの淡さ、枠の上では重なった部分がわずかに濃く見える */
   .why__marquee {
+    position: relative;
+    z-index: 1;
     overflow: clip;
     margin-top: calc(-0.17em - var(--space-40) - var(--section-space-emphasis));
     padding-bottom: var(--space-40);
-    color: var(--stc-canvas);
+    color: color-mix(in srgb, var(--stc-ink) 6%, transparent);
     font-family: var(--font-label);
     font-size: 258px;
     font-weight: 400;
