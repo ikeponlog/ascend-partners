@@ -2,15 +2,16 @@
 import { STEPS, QUESTION_BY_ID } from './questions.js';
 import { RESULT_COPY, PRIORITY_COPY, READY_COPY, READY_COPY_PRE_FOUNDING, UNCONFIRMED } from './content.js';
 
-const ASSET = '../assets';
-
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const t = (s) => esc(s).replace(/\n/g, '<br class="u-sp">');
 
 // STC v3 / Brand CTA（Primary / Secondary）。高さ56はフロー内のインスタンス値
+// 矢印は文字色（currentColor）で描き、色はCSS（--cta-arrow）で切り替える（ホバーの反転。D-070）
+const ARROW = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33333 8H12.6667M8.66667 12L12.6667 8L8.66667 4" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const CAPSULE = `<span class="c-cta__capsule" aria-hidden="true">${ARROW}</span>`;
+
 function cta({ label, tone = 'primary', action, type = 'button', loading = false, extra = '' }) {
-  const icon = tone === 'primary' ? 'arrow-capsule-brand.svg' : 'arrow-capsule-white.svg';
-  const capsule = loading ? '' : `<span class="c-cta__capsule" aria-hidden="true"><img src="${ASSET}/icons/${icon}" width="16" height="16" alt=""></span>`;
+  const capsule = loading ? '' : CAPSULE;
   const attrs = loading ? ' disabled aria-busy="true"' : '';
   return `<button class="c-cta c-cta--${tone} dx-btn" type="${type}"${action ? ` data-action="${action}"` : ''}${attrs}${extra}><span class="c-cta__label">${esc(label)}</span>${capsule}</button>`;
 }
@@ -86,7 +87,7 @@ export function abortView() {
       ${title('診断を中断しますか？')}
       <p class="dx-lead">この画面を閉じると、入力中の回答は失われます。続ける場合は「回答に戻る」を選んでください。</p>
       ${cta({ label: '回答に戻る', action: 'resume' })}
-      <a class="c-cta c-cta--secondary dx-btn" href="../"><span class="c-cta__label">診断を終了する</span><span class="c-cta__capsule" aria-hidden="true"><img src="${ASSET}/icons/arrow-capsule-white.svg" width="16" height="16" alt=""></span></a>
+      <a class="c-cta c-cta--secondary dx-btn" href="../"><span class="c-cta__label">診断を終了する</span>${CAPSULE}</a>
     </div>`;
 }
 

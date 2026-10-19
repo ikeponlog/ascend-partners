@@ -19,21 +19,22 @@
       transform: none;
     }
 
-    /* Brand CTA：公式サイトのボタンと同じく、色だけが 0.3秒の一定速度で変わる（2026-10-19 ご依頼。D-066。
-       以前の浮き上がり・矢印の前進はやめた）。フェードアップ（opacity / transform）は別に動かす */
+    /* Brand CTA：ホバーで反転（色は公式サイトのボタンと同じ 0.3秒の一定速度）＋浮き上がり（D-070）。
+       ホバーの浮き上がりは translate、フェードアップは opacity / transform で別々に動かす */
     .c-cta {
       transition:
         opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
         transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        translate var(--dur-base) var(--ease-out),
+        box-shadow var(--dur-official) linear,
         background-color var(--dur-official) linear,
         color var(--dur-official) linear;
     }
 
-    .c-cta__capsule,
-    .c-cta__capsule img {
+    .c-cta__capsule {
       transition:
         background-color var(--dur-official) linear,
-        filter var(--dur-official) linear;
+        color var(--dur-official) linear;
     }
 
     /* 番号付きカード：ホバーの浮き上がりは translate、フェードアップは opacity / transform で別々に動かす */
@@ -47,6 +48,16 @@
   }
 
   @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .c-cta:where(:not([disabled], [aria-disabled='true'])):hover {
+      --cta-shadow: var(--shadow-raise);
+      translate: 0 -2px;
+    }
+
+    .c-cta:active {
+      --cta-shadow: 0 0 #0000;
+      translate: none;
+    }
+
     /* 番号付きカード：少し浮き上がる（リンクではないためカーソルは変えない） */
     .c-numcard:hover {
       box-shadow: var(--shadow-raise);
@@ -171,7 +182,7 @@
     }
 
     .cta:hover .cta__consult {
-      box-shadow: inset 0 0 0 1px var(--stc-paper);
+      --cta-ring: var(--stc-paper);
     }
   }
 
@@ -184,6 +195,7 @@
       transition:
         opacity var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
         transform var(--dur-reveal) var(--ease-out) var(--reveal-delay, 0ms),
+        translate var(--dur-base) var(--ease-out),
         background-color var(--dur-official) linear,
         color var(--dur-official) linear,
         box-shadow var(--dur-official) linear;
